@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>24/7 AI Dispatcher for Plumbers | Never Miss an Emergency Call | Rank & Ring</title>
+    <title>AI Dispatcher for Electricians | Book More Panel & EV Charger Jobs | Rank & Ring</title>
     <meta name="description"
-        content="Plumbers: stop missing $800 water damage emergencies. Rank & Ring's AI dispatcher answers calls and books jobs 24/7—even when you're under a sink.">
+        content="Electricians: stop missing high-value jobs. Rank & Ring's AI dispatcher answers calls and books panel upgrades and EV charger installs 24/7—even when your hands are full.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,26 +16,29 @@
 
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Override global background pattern for a water/plumbing theme */
+        /* Override global background pattern for an Electrical theme */
         .bg-pattern {
             background:
-                radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.2), transparent 30%),
-                radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.1), transparent 30%);
+                radial-gradient(circle at 15% 50%, rgba(234, 179, 8, 0.15), transparent 30%),
+                /* Yellow for electricity */
+                radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.15), transparent 30%);
+            /* Orange/Amber */
         }
 
         .text-accent {
-            color: var(--color-blue);
+            color: #eab308;
+            /* Bright Yellow */
         }
 
         .btn-primary {
-            background-color: var(--color-blue);
-            box-shadow: var(--shadow-glow-blue);
-            color: white;
+            background-color: #eab308;
+            box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+            color: #000;
         }
 
         .btn-primary:hover {
-            background-color: #0284c7;
-            box-shadow: 0 0 30px rgba(14, 165, 233, 0.5);
+            background-color: #ca8a04;
+            box-shadow: 0 0 30px rgba(234, 179, 8, 0.5);
         }
     </style>
 </head>
@@ -52,66 +55,80 @@
                     </path>
                 </svg>
                 Rank<span>&</span>Ring <span
-                    style="font-size: 0.875rem; color: var(--color-blue); font-weight: normal; margin-left: 0.5rem; border-left: 1px solid var(--color-border); padding-left: 0.5rem;">For
-                    Plumbers</span>
+                    style="font-size: 0.875rem; color: #eab308; font-weight: normal; margin-left: 0.5rem; border-left: 1px solid var(--color-border); padding-left: 0.5rem;">For
+                    Electricians</span>
             </a>
+            <div class="nav-links">
+                <a href="index.html#calculator" class="btn btn-secondary"
+                    style="padding: 0.5rem 1rem; font-size: 0.875rem;">ROI Calculator</a>
+            </div>
         </div>
     </nav>
 
     <section class="hero container" style="min-height: 80vh;">
         <div class="hero-grid">
             <div class="hero-content fade-in-up">
-                <span class="badge" style="margin-bottom: 1rem; display: inline-block;">Plumbing Exclusive System</span>
-                <h1>Thanksgiving weekend. Your competitor answered. <span class="text-accent">You didn't.</span></h1>
-                <p>When a pipe bursts, they don't leave voicemails. They call the next guy. Stop losing $800 emergency
-                    water damage calls because you were 5 minutes late to respond.</p>
+                <span class="badge"
+                    style="margin-bottom: 1rem; display: inline-block; background: rgba(234, 179, 8, 0.1); color: #eab308; border-color: rgba(234, 179, 8, 0.2);">Electrical
+                    Exclusive System</span>
+                <h1>Your competitor just booked the panel upgrade you missed because <span class="text-accent">you were
+                        on a job site.</span></h1>
+                <p>High-value jobs like panel replacements and EV charger installs go to the electrician who answers
+                    first. A Virtual Dispatcher qualifies and books them immediately while your hands are full.</p>
 
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="quiz.html" class="btn btn-primary">See How Much Open Pipe Capacity You Have</a>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                    <a href="quiz.html" class="btn btn-primary">See Your Missed Revenue Potential</a>
+                    <a href="#" class="btn btn-secondary" onclick="alert('Demo video coming soon!')">Watch a 2-minute
+                        demo</a>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div
+                        style="width: 40px; height: 40px; background: rgba(234, 179, 8, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #eab308;">
+                        MS</div>
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: white; font-style: italic;">"Booked two EV
+                            charger installs while I was doing a rough-in across town."</p>
+                        <span style="font-size: 0.75rem; color: var(--color-text-muted);">— Mark S., Master
+                            Electrician</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Visual Representation of the AI Receptionist - Plumbing Context -->
+            <!-- Visual Representation of the AI Receptionist - Electrical Context -->
             <div class="hero-visual fade-in-up delay-1">
-                <div class="glass-card" style="border-top: 4px solid var(--color-blue);">
+                <div class="glass-card" style="border-top: 4px solid #eab308;">
                     <div
                         style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; margin-bottom: 1rem;">
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
                             <div style="width: 10px; height: 10px; background: #22c55e; border-radius: 50%;"></div>
                             <strong>AI Dispatcher: Active</strong>
                         </div>
-                        <span style="color: var(--color-text-muted); font-size: 0.875rem;">Saturday, 2:15 AM</span>
+                        <span style="color: var(--color-text-muted); font-size: 0.875rem;">Tuesday, 7:30 PM</span>
                     </div>
 
                     <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                         <p style="margin: 0; font-size: 0.875rem;"><em>Incoming SMS from Lead:</em><br />
-                            <span style="color: white; font-weight: 500;">"My water heater is leaking all over the
-                                basement floor. Need someone ASAP."</span>
+                            <span style="color: white; font-weight: 500;">"Half the power in my house just went out and
+                                I smell something burning near the breaker box."</span>
                         </p>
                     </div>
 
                     <div
-                        style="background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.2); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <p style="margin: 0; font-size: 0.875rem; color: var(--color-blue);"><strong
+                        style="background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.2); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #eab308;"><strong
                                 style="color: white;">Dispatcher:</strong><br />
-                            "I can send an emergency tech. Our after-hours dispatch fee is $150. Since your basement is
-                            flooded, would you also like to add a $99 rapid sewer camera inspection while we're there?"
-                        </p>
-                    </div>
-
-                    <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <p style="margin: 0; font-size: 0.875rem;"><em>Incoming SMS from Lead:</em><br />
-                            <span style="color: white; font-weight: 500;">"YES to both."</span>
-                        </p>
+                            "Shut off your main breaker immediately. This is an after-hours emergency ($195 call-out
+                            fee). I have a licensed tech who can be there in 45 mins. Reply 'YES' to dispatch them."</p>
                     </div>
 
                     <div
-                        style="display: flex; gap: 0.5rem; align-items: center; justify-content: center; background: rgba(14, 165, 233, 0.1); color: var(--color-blue); padding: 0.75rem; border-radius: 8px; font-weight: bold; border: 1px solid rgba(14, 165, 233, 0.3);">
+                        style="display: flex; gap: 0.5rem; align-items: center; justify-content: center; background: rgba(234, 179, 8, 0.1); color: #eab308; padding: 0.75rem; border-radius: 8px; font-weight: bold; border: 1px solid rgba(234, 179, 8, 0.3);">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                         </svg>
-                        $1,200 Job + $99 Upsell Booked While You Slept
+                        $3,200 Panel Upgrade Secured
                     </div>
                 </div>
             </div>
@@ -161,7 +178,6 @@
             &copy; 2026 Rank & Ring. All rights reserved.
         </div>
     </footer>
-
 </body>
 
 </html>

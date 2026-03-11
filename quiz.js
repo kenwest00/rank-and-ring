@@ -90,8 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.style.opacity = '0.7';
 
         setTimeout(() => {
-            alert(`Thanks ${name}! In a real app, this would route to a booking calendar or send an SMS via webhook.`);
-            window.location.href = 'index.html';
+            // Note: In production this would hit an API e.g. /api/leads
+            // For the prototype, we redirect to the Thank You page and pass the name to personalize it
+            window.location.href = `thankyou.html?name=${encodeURIComponent(name)}`;
         }, 1500);
     });
 });
