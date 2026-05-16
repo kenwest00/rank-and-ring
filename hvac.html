@@ -102,21 +102,14 @@
     footer{border-top:1px solid var(--color-border);padding:3rem 0;margin-top:4rem;background:rgba(15,23,42,.5)}
     .footer-bottom{text-align:center;font-size:.8rem;color:var(--color-text-muted);margin-top:2rem;padding-top:1rem;border-top:1px solid var(--color-border)}
   
-    /* Demo gate form */
-    .demo-gate{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-lg);padding:2rem;margin-bottom:1.5rem}
-    .demo-gate h4{font-size:1.05rem;font-weight:700;color:white;margin-bottom:.4rem;font-family:var(--font-heading)}
-    .demo-gate p{font-size:.875rem;color:#94a3b8;margin-bottom:1.25rem}
-    .gate-row{display:flex;gap:.75rem;max-width:480px;margin:0 auto;flex-wrap:wrap}
-    .gate-name{width:140px;flex-shrink:0;padding:.8rem 1rem;background:#1e293b;border:1.5px solid #475569;border-radius:var(--radius);color:white;font-size:.9rem;font-family:var(--font-body)}
-    .gate-phone{flex:1;min-width:160px;padding:.8rem 1rem;background:#1e293b;border:1.5px solid #475569;border-radius:var(--radius);color:white;font-size:.9rem;font-family:var(--font-body)}
-    .gate-name:focus,.gate-phone:focus{outline:none;border-color:#f87171;box-shadow:0 0 0 3px rgba(248,113,113,.3)}
-    .gate-name::placeholder,.gate-phone::placeholder{color:#64748b}
-    .gate-submit{padding:.8rem 1.4rem;border:none;border-radius:var(--radius);font-weight:700;font-size:.9rem;cursor:pointer;background:#f87171;color:#000;white-space:nowrap;transition:var(--transition);flex-shrink:0;font-family:var(--font-heading)}
-    .gate-submit:hover{opacity:.88;transform:translateY(-1px)}
-    .gate-note{font-size:.78rem;color:#64748b;margin-top:.75rem;text-align:center}
-    .gate-success{font-size:.875rem;color:#4ade80;margin-top:.75rem;display:none;text-align:center;font-weight:600}
-    .demo-widget-wrap{display:none!important;justify-content:center;align-items:center;min-height:80px;margin-bottom:1.75rem}
-    .demo-widget-wrap.unlocked{display:flex!important}
+    /* Demo button */
+    .demo-btn-wrap{text-align:center;margin-bottom:1.75rem}
+    .demo-start-btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2rem;border:none;border-radius:var(--radius);font-size:1rem;font-weight:700;cursor:pointer;font-family:var(--font-heading);transition:var(--transition);letter-spacing:-.01em}
+    .demo-start-btn:hover{transform:translateY(-2px);opacity:.92}
+    .demo-start-btn svg{transition:transform .2s}
+    .demo-start-btn:hover svg{transform:translateX(3px)}
+    .demo-widget-wrap{display:none;justify-content:center;align-items:center;min-height:80px;margin-bottom:1.75rem}
+    .demo-widget-wrap.active{display:flex}
   </style>
 </head>
 <body>
@@ -196,20 +189,14 @@
               <div class="demo-ctx-val urgent">AC failure · Newborn in home · 94° outside · Caller is panicking</div>
             </div>
           </div>
-          <div class="demo-instruction">Listen to the call your AI just took.</div>
-          <div class="demo-instruction-sub">Then watch what appears in your messages — automatically.</div>
-          <div class="demo-gate" id="hvac-gate">
-            <h4>Enter your number to receive the dispatch alert on your phone.</h4>
-            <p>We'll send you the real text your AI dispatcher would fire — so you feel exactly what your customers experience.</p>
-            <div class="gate-row" style="justify-content:center">
-              <input class="gate-name" type="text" placeholder="First name" id="hvac-name" maxlength="40">
-              <input class="gate-phone" type="tel" placeholder="Your mobile number" id="hvac-phone" maxlength="20">
-              <button class="gate-submit" onclick="unlockDemo_hvac()">Start demo →</button>
-            </div>
-            <div class="gate-note">📱 We'll text you once. No spam. No sales call. Just the demo.</div>
-            <div class="gate-success" id="hvac-success">✓ Sending now — check your phone in 30 seconds.</div>
+          
+          <div class="demo-btn-wrap" id="hvac-btn-wrap">
+            <button class="demo-start-btn" style="background:#f87171;color:#000" onclick="startDemo_hvac()">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="currentColor"/></svg>
+              Hear the call →
+            </button>
           </div>
-          <div class="demo-widget-wrap" id="hvac-wrap">
+          <div class="demo-widget-wrap" id="hvac-wrap"> id="hvac-wrap">
             <elevenlabs-convai agent-id="agent_6601krryfm1cezmt13p825r97870" dynamic-variables='{"trade": "HVAC", "services": "air conditioning repair and replacement, heating systems, heat pumps, duct cleaning, refrigerant recharge, thermostat installation, seasonal tune-ups, and system diagnostics", "emergency_triggers": "AC not cooling when outside temp is above 85F, no heat when outside temp is below 40F, burning smell from vents or HVAC unit, carbon monoxide alarm triggered, refrigerant leak suspected, system making loud banging or grinding noise, caller mentions infant or medically vulnerable person in home without working AC or heat", "safety_instruction": "While you wait, turn your thermostat to OFF - not just fan - to stop the system from running and causing further damage. Keep windows closed to retain whatever cool or warm air remains in the home.", "non_emergency": "seasonal tune-up or maintenance check, strange noise but system still running, higher than normal energy bills, new system estimate or replacement quote, duct cleaning, thermostat upgrade", "extra_intake": "How long has the issue been occurring, and whether anyone in the home is elderly, an infant, or has a medical condition that makes temperature critical", "tone": "Calm and reassuring. AC failures in Atlanta summer and heating failures in winter are genuine emergencies. Match their urgency with competence. If someone is panicking, slow your speech, acknowledge the situation first, then gather information.", "emergency_closing": "Keep the area around your indoor and outdoor unit clear. If you smell burning, turn the system off at the thermostat and the breaker."}'></elevenlabs-convai>
           </div>
           <div class="sms-alert" id="hvac-sms">
@@ -239,66 +226,26 @@
 </section>
 <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 <script>
-  // REPLACE THIS URL with your Zapier or Make webhook URL
-  var WEBHOOK_URL_HVAC = 'https://xmmpadmhyrxbxktefmug.supabase.co/functions/v1/hyper-handler';
+  function startDemo_hvac() {
+    // Hide button
+    var btn = document.getElementById('hvac-btn-wrap');
+    if (btn) btn.style.display = 'none';
 
-  function unlockDemo_hvac() {
-    var name = document.getElementById('hvac-name').value.trim();
-    var phone = document.getElementById('hvac-phone').value.trim();
+    // Show widget
+    var wrap = document.getElementById('hvac-wrap');
+    if (wrap) wrap.classList.add('active');
 
-    if (!name || !phone) {
-      document.getElementById('hvac-phone').style.borderColor = '#f87171';
-      document.getElementById('hvac-phone').placeholder = 'Required — enter your mobile number';
-      return;
-    }
-
-    // Show success state on gate
-    document.getElementById('hvac-success').style.display = 'block';
-
-    // Unlock the widget
-    document.getElementById('hvac-wrap').classList.add('unlocked');
-
-    // Scroll widget into view smoothly
+    // Smooth scroll to widget
     setTimeout(function() {
-      document.getElementById('hvac-wrap').scrollIntoView({behavior:'smooth', block:'center'});
-    }, 300);
+      if (wrap) wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
 
-    // Fire webhook — sends real SMS + email to prospect
-    fetch(WEBHOOK_URL_HVAC, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        name: name,
-        phone: phone,
-        trade: 'HVAC',
-        trade_label: 'HVAC emergency (AC failure, newborn in home, 94° outside)',
-        source_page: window.location.href,
-        timestamp: new Date().toISOString(),
-        sms_message: 'Hey ' + name + ' — here is what just landed in your contractor pocket. HVAC emergency (AC failure, newborn in home, 94° outside). Customer expects callback within 30 min. This is a demo — but this is exactly what YOUR customers experience when they call and you cannot answer. Ken West, Rank & Ring (404) 555-0123',
-        email_subject: 'What your AI dispatcher just captured — Rank & Ring Demo',
-        email_body: 'Hi ' + name + ', You just experienced the Rank & Ring AI dispatcher demo. Here is what was captured: Trade: HVAC | Issue: HVAC emergency (AC failure, newborn in home, 94° outside) | Your number: ' + phone + '. This is exactly what lands in your contractors pocket after every call — name, number, address, issue, urgency. Ready to set this up for your business? Book a free 15-minute analysis at rankandring.io/book. — Ken West, Rank & Ring'
-      })
-    }).catch(function() {
-      // Silent fail — demo still works even if webhook fails
-      console.log('Webhook unavailable — demo continues');
-    });
-
-    // Show animated SMS card after 8 seconds
+    // Animate SMS card after 8 seconds
     setTimeout(function() {
       var sms = document.getElementById('hvac-sms');
       if (sms) sms.classList.add('visible');
     }, 8000);
   }
-
-  // Allow Enter key on phone field
-  document.addEventListener('DOMContentLoaded', function() {
-    var phoneInput = document.getElementById('hvac-phone');
-    if (phoneInput) {
-      phoneInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') unlockDemo_hvac();
-      });
-    }
-  });
 </script>
 
 <section class="pillars-section">
