@@ -36,22 +36,41 @@
     .msg.outbound .msg-label{color:#f87171}
     .result-bar{display:flex;align-items:center;justify-content:center;gap:.75rem;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);padding:.85rem 1.25rem;border-radius:var(--radius);font-weight:700;color:#4ade80;font-size:.95rem;margin-top:.5rem}
     .demo-section{padding:5rem 0;background:linear-gradient(135deg,rgba(248,113,113,.06),rgba(15,23,42,1),rgba(245,158,11,.06))}
-    .demo-phone{background:rgba(15,23,42,.9);border:1px solid rgba(248,113,113,.3);border-radius:var(--radius-lg);max-width:760px;margin:2.5rem auto 0;overflow:hidden;box-shadow:0 0 60px rgba(248,113,113,.15)}
-    .demo-phone-bar{background:rgba(248,113,113,.12);border-bottom:1px solid rgba(248,113,113,.2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
-    .demo-calling{display:flex;align-items:center;gap:.6rem;font-size:.85rem;font-weight:700;color:#f87171}
-    .demo-calling-dot{width:8px;height:8px;border-radius:50%;background:#f87171;animation:pulse-dot 1.2s infinite}
-    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
-    .demo-body{padding:2.5rem;text-align:center}
-    .demo-scenario{background:rgba(0,0,0,.3);border-left:3px solid #f87171;border-radius:0 var(--radius) var(--radius) 0;padding:1rem 1.25rem;text-align:left;margin-bottom:2rem;font-size:.95rem;color:var(--color-text-muted);line-height:1.6;font-style:italic}
-    .demo-scenario strong{color:white;font-style:normal}
-    .demo-body h3{font-size:1.3rem;color:white;margin-bottom:.5rem}
-    .demo-body p{font-size:.95rem;color:var(--color-text-muted);max-width:480px;margin:0 auto 1.75rem}
-    .demo-widget-wrap{display:flex;justify-content:center;align-items:center;min-height:80px}
-    .demo-result{display:flex;align-items:center;gap:.75rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:var(--radius);padding:1rem 1.25rem;margin-top:1.75rem;font-size:.875rem;color:#4ade80;text-align:left}
-    .demo-result-icon{font-size:1.25rem;flex-shrink:0}
-    .demo-steps{display:flex;justify-content:center;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
-    .demo-step{text-align:center;font-size:.8rem;color:var(--color-text-muted)}
-    .demo-step-num{width:28px;height:28px;border-radius:50%;background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.3);color:#f87171;font-weight:800;font-family:var(--font-heading);display:flex;align-items:center;justify-content:center;margin:0 auto .5rem;font-size:.8rem}
+    .demo-outer{max-width:800px;margin:2.5rem auto 0}
+    .demo-pov-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.3);color:#f87171;border-radius:999px;padding:.4rem 1.1rem;font-size:.8rem;font-weight:700;margin-bottom:1.5rem;letter-spacing:.04em}
+    .demo-pov-badge span{background:#f87171;color:#000;border-radius:999px;padding:.1rem .55rem;font-size:.7rem;margin-right:.2rem}
+    .demo-phone{background:rgba(10,12,20,.95);border:1px solid rgba(248,113,113,.25);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 0 80px rgba(248,113,113,.12),0 24px 60px rgba(0,0,0,.5)}
+    .demo-phone-bar{background:rgba(248,113,113,.1);border-bottom:1px solid rgba(248,113,113,.18);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+    .demo-calling{display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:700;color:#f87171}
+    .demo-calling-dot{width:7px;height:7px;border-radius:50%;background:#f87171;animation:pulse-dot 1.2s infinite}
+    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.75)}}
+    .demo-body{padding:2rem 2.5rem 2.5rem;text-align:center}
+    .demo-context{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;text-align:left}
+    .demo-ctx-card{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:.9rem 1.1rem}
+    .demo-ctx-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:.35rem}
+    .demo-ctx-val{font-size:.9rem;color:white;line-height:1.45}
+    .demo-ctx-val.urgent{color:#f87171;font-weight:700}
+    .demo-instruction{font-size:1rem;color:white;font-weight:600;font-family:var(--font-heading);margin-bottom:.4rem}
+    .demo-instruction-sub{font-size:.875rem;color:var(--color-text-muted);margin-bottom:1.5rem}
+    .demo-widget-wrap{display:flex;justify-content:center;align-items:center;min-height:80px;margin-bottom:1.75rem}
+    /* SMS alert */
+    .sms-alert{background:#1a1a2e;border:1px solid rgba(74,222,128,.3);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;text-align:left;position:relative;overflow:hidden;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+    .sms-alert.visible{opacity:1;transform:translateY(0)}
+    .sms-alert::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#4ade80,#22c55e)}
+    .sms-top{display:flex;align-items:center;gap:.65rem;margin-bottom:.85rem}
+    .sms-app-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#22c55e,#16a34a);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .sms-from{font-size:.8rem;color:var(--color-text-muted)}
+    .sms-from strong{display:block;color:white;font-size:.85rem;font-family:var(--font-heading)}
+    .sms-time{font-size:.75rem;color:var(--color-text-muted);margin-left:auto}
+    .sms-bubble{background:rgba(255,255,255,.06);border-radius:var(--radius);padding:.9rem 1.1rem;font-size:.875rem;color:var(--color-text-muted);line-height:1.65}
+    .sms-bubble strong{color:#4ade80}
+    .sms-bubble .sms-tag{display:inline-block;background:rgba(248,113,113,.15);color:#f87171;border-radius:4px;padding:.1rem .4rem;font-size:.75rem;font-weight:700;margin-right:.3rem}
+    .sms-cta-row{display:flex;gap:.6rem;margin-top:.85rem}
+    .sms-btn{flex:1;padding:.6rem;border-radius:var(--radius);font-size:.8rem;font-weight:700;text-align:center;cursor:pointer;border:none;font-family:var(--font-heading)}
+    .sms-btn.call{background:#4ade80;color:#000}
+    .sms-btn.dismiss{background:rgba(255,255,255,.07);color:var(--color-text-muted)}
+    .demo-trigger-hint{font-size:.8rem;color:var(--color-text-muted);margin-top:.85rem;font-style:italic}
+    @media(max-width:600px){.demo-context{grid-template-columns:1fr}.demo-body{padding:1.5rem}}
     .pillars-section{padding:5rem 0}
     .pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
     .pillar-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.75rem;transition:var(--transition)}
@@ -140,41 +159,64 @@
 <section class="demo-section">
   <div class="container text-center">
     <div class="section-tag">Live AI Demo</div>
-    <h2 class="section-title" style="font-size:clamp(1.9rem,4vw,2.75rem)">Hear exactly what your customers hear<br>when you can't answer the phone.</h2>
-    <p style="color:var(--color-text-muted);max-width:560px;margin:0 auto;font-size:1.05rem">This is a live call with your AI dispatcher. Click the button, speak as a homeowner, and hear how it handles an AC emergency — booking the job, flagging the urgency, and notifying you — without you lifting a finger.</p>
+    <h2 class="section-title" style="font-size:clamp(1.9rem,4vw,2.75rem)">This is what answers your phone<br>when you can't.</h2>
+    <p style="color:var(--color-text-muted);max-width:580px;margin:0 auto;font-size:1.05rem">You're on a job. It's 94°. A homeowner with a newborn calls your number. Listen to how your AI dispatcher handles it — then watch what lands in your pocket.</p>
 
-    <div class="demo-phone">
-      <div class="demo-phone-bar">
-        <div class="demo-calling">
-          <div class="demo-calling-dot"></div>
-          AI Dispatcher — Active 24/7
+    <div class="demo-outer">
+      <div class="demo-pov-badge"><span>YOU ARE</span> The contractor. Listen from your perspective.</div>
+      <div class="demo-phone">
+        <div class="demo-phone-bar">
+          <div class="demo-calling"><div class="demo-calling-dot"></div>Incoming call · Your business line</div>
+          <div style="font-size:.78rem;color:var(--color-text-muted)">AI Dispatcher handling it</div>
         </div>
-        <div style="font-size:.8rem;color:var(--color-text-muted)">Rank & Ring · HVAC Demo</div>
-      </div>
-      <div class="demo-body">
-        <div class="demo-scenario">
-          <strong>The scenario:</strong> It's 95° in Atlanta. A homeowner's AC just died and they have a newborn. They call your number. You're on a job and can't answer. This is what picks up.
-        </div>
-        <h3>Click the button. Start the call.</h3>
-        <p>Speak as the homeowner — or just listen. The AI handles triage, urgency, and booking in real time.</p>
-        <div class="demo-widget-wrap">
-          <elevenlabs-convai agent-id="agent_6601krryfm1cezmt13p825r97870"></elevenlabs-convai>
-        </div>
-        <div class="demo-result">
-          <div class="demo-result-icon">📱</div>
-          <div>After this call: <strong>you receive a text</strong> — customer name, number, address, issue, and urgency level. Emergency jobs reach you in under 60 seconds. Everything else books to your calendar.</div>
-        </div>
-        <div class="demo-steps">
-          <div class="demo-step"><div class="demo-step-num">1</div>Customer calls your number</div>
-          <div class="demo-step"><div class="demo-step-num">2</div>AI answers in 1 ring</div>
-          <div class="demo-step"><div class="demo-step-num">3</div>Emergency flagged instantly</div>
-          <div class="demo-step"><div class="demo-step-num">4</div>You get a text. You call back.</div>
+        <div class="demo-body">
+          <div class="demo-context">
+            <div class="demo-ctx-card">
+              <div class="demo-ctx-label">📍 Your situation</div>
+              <div class="demo-ctx-val">You're in an attic in Decatur. Both hands on a refrigerant line. Phone rings. You can't answer.</div>
+            </div>
+            <div class="demo-ctx-card">
+              <div class="demo-ctx-label">🌡 The call coming in</div>
+              <div class="demo-ctx-val urgent">AC failure · Newborn in home · 94° outside · Caller is panicking</div>
+            </div>
+          </div>
+          <div class="demo-instruction">Listen to the call your AI just took.</div>
+          <div class="demo-instruction-sub">Then watch what appears in your messages — automatically.</div>
+          <div class="demo-widget-wrap">
+            <elevenlabs-convai agent-id="agent_6601krryfm1cezmt13p825r97870"></elevenlabs-convai>
+          </div>
+          <div class="sms-alert" id="hvac-sms">
+            <div class="sms-top">
+              <div class="sms-app-icon">💬</div>
+              <div class="sms-from"><strong>Rank &amp; Ring Dispatch</strong>New emergency lead</div>
+              <div class="sms-time">Just now</div>
+            </div>
+            <div class="sms-bubble">
+              <span class="sms-tag">🚨 EMERGENCY</span><strong>Jennifer M.</strong> · (404) 555-0187<br>
+              1842 Sycamore Dr, Decatur GA 30032<br><br>
+              <strong>Issue:</strong> AC not cooling · 94° outside · Newborn in home<br>
+              <strong>Urgency:</strong> Same-day dispatch requested<br>
+              <strong>Best callback:</strong> Any time · "Please hurry"<br><br>
+              <em style="color:var(--color-text-muted);font-size:.8rem">AI confirmed availability. Customer expects your call.</em>
+            </div>
+            <div class="sms-cta-row">
+              <button class="sms-btn call">📞 Call Jennifer back</button>
+              <button class="sms-btn dismiss">View full log</button>
+            </div>
+          </div>
+          <p class="demo-trigger-hint">This text arrives within 60 seconds of the call ending — whether you're in an attic, under a house, or asleep.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+<script>
+  setTimeout(function() {
+    var sms = document.getElementById('hvac-sms');
+    if (sms) sms.classList.add('visible');
+  }, 8000);
+</script>
 
 <section class="pillars-section">
   <div class="container">

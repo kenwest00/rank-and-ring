@@ -118,40 +118,63 @@
 <section class="demo-section">
   <div class="container text-center">
     <div class="section-tag">Live AI Demo</div>
-    <h2 class="section-title" style="font-size:clamp(1.9rem,4vw,2.75rem)">Hear exactly what your customers hear<br>when you can't answer the phone.</h2>
-    <p style="color:var(--color-text-muted);max-width:560px;margin:0 auto;font-size:1.05rem">This is a live call with your AI dispatcher. Click the button, speak as a homeowner with a burst pipe, and hear how it triages the emergency — and notifies you instantly.</p>
-    <div class="demo-phone">
-      <div class="demo-phone-bar">
-        <div class="demo-calling">
-          <div class="demo-calling-dot"></div>
-          AI Dispatcher — Active 24/7
+    <h2 class="section-title" style="font-size:clamp(1.9rem,4vw,2.75rem)">This is what answers your phone<br>when you can't.</h2>
+    <p style="color:var(--color-text-muted);max-width:580px;margin:0 auto;font-size:1.05rem">It's 11pm. A homeowner has a burst pipe and water is going everywhere. They call your number. You're asleep. Listen to how your AI handles it — then see what lands in your pocket.</p>
+    <div class="demo-outer">
+      <div class="demo-pov-badge"><span>YOU ARE</span> The plumber. Listen from your perspective.</div>
+      <div class="demo-phone">
+        <div class="demo-phone-bar">
+          <div class="demo-calling"><div class="demo-calling-dot"></div>Incoming call · Your business line</div>
+          <div style="font-size:.78rem;color:var(--color-text-muted)">AI Dispatcher handling it</div>
         </div>
-        <div style="font-size:.8rem;color:var(--color-text-muted)">Rank & Ring · Plumbing Demo</div>
-      </div>
-      <div class="demo-body">
-        <div class="demo-scenario">
-          <strong>The scenario:</strong> It's 11pm. A homeowner has a burst pipe under their kitchen sink — water is going everywhere. They call your number. You're asleep. This is what picks up.
-        </div>
-        <h3>Click the button. Start the call.</h3>
-        <p>Speak as the homeowner — or just listen. The AI handles triage, urgency, and dispatch in real time.</p>
-        <div class="demo-widget-wrap">
-          <elevenlabs-convai agent-id="agent_6601krryfm1cezmt13p825r97870"></elevenlabs-convai>
-        </div>
-        <div class="demo-result">
-          <div class="demo-result-icon">📱</div>
-          <div>After this call: <strong>you receive a text</strong> — customer name, number, address, issue, and urgency. Burst pipe calls reach you in under 60 seconds. No voicemail. No missed job.</div>
-        </div>
-        <div class="demo-steps">
-          <div class="demo-step"><div class="demo-step-num">1</div>Customer calls your number</div>
-          <div class="demo-step"><div class="demo-step-num">2</div>AI answers in 1 ring</div>
-          <div class="demo-step"><div class="demo-step-num">3</div>Emergency flagged instantly</div>
-          <div class="demo-step"><div class="demo-step-num">4</div>You get a text. You call back.</div>
+        <div class="demo-body">
+          <div class="demo-context">
+            <div class="demo-ctx-card">
+              <div class="demo-ctx-label">📍 Your situation</div>
+              <div class="demo-ctx-val">It's 11:20pm. You're in bed. Your phone rings with an unknown number. You let the AI dispatcher take it.</div>
+            </div>
+            <div class="demo-ctx-card">
+              <div class="demo-ctx-label">💧 The call coming in</div>
+              <div class="demo-ctx-val urgent">Burst pipe · Kitchen flooding · Water won't shut off · Panicking homeowner</div>
+            </div>
+          </div>
+          <div class="demo-instruction">Listen to the call your AI just took.</div>
+          <div class="demo-instruction-sub">Then watch what appears in your messages — automatically.</div>
+          <div class="demo-widget-wrap">
+            <elevenlabs-convai agent-id="agent_6601krryfm1cezmt13p825r97870"></elevenlabs-convai>
+          </div>
+          <div class="sms-alert" id="plumb-sms">
+            <div class="sms-top">
+              <div class="sms-app-icon">💬</div>
+              <div class="sms-from"><strong>Rank &amp; Ring Dispatch</strong>New emergency lead</div>
+              <div class="sms-time">Just now</div>
+            </div>
+            <div class="sms-bubble">
+              <span class="sms-tag">🚨 EMERGENCY</span><strong>Robert K.</strong> · (215) 555-0294<br>
+              3317 Walnut Ave, Philadelphia PA 19104<br><br>
+              <strong>Issue:</strong> Burst pipe under kitchen sink · Active flooding<br>
+              <strong>Urgency:</strong> Immediate — water won't shut off<br>
+              <strong>Best callback:</strong> Right now · "Please, we're flooding"<br><br>
+              <em style="color:var(--color-text-muted);font-size:.8rem">AI advised customer to locate main shutoff. Expects your call.</em>
+            </div>
+            <div class="sms-cta-row">
+              <button class="sms-btn call">📞 Call Robert back</button>
+              <button class="sms-btn dismiss">View full log</button>
+            </div>
+          </div>
+          <p class="demo-trigger-hint">This text arrives within 60 seconds of the call ending — whether you're asleep, on another job, or with your family.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+<script>
+  setTimeout(function() {
+    var sms = document.getElementById('plumb-sms');
+    if (sms) sms.classList.add('visible');
+  }, 8000);
+</script>
 
 <section class="pricing-section" style="padding:5rem 0" id="pricing">
   <div class="container text-center">
