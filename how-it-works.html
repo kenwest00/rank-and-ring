@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works | Rank & Ring</title>
+  <meta name="description" content="See exactly how Rank & Ring works — from free analysis through onboarding, launch, and your monthly program. No surprises.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar{position:fixed;background:rgba(15,23,42,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-border);padding:1rem 0;top:0;left:0;right:0;z-index:100}
+    .nav-links{display:flex;gap:1.75rem;align-items:center}
+    .nav-links a{color:var(--color-text-muted);text-decoration:none;font-size:.95rem;font-weight:500;font-family:var(--font-heading);transition:var(--transition)}
+    .nav-links a:hover{color:white}
+    .nav-cta{background:var(--color-accent)!important;color:#000!important;padding:.5rem 1.25rem;border-radius:var(--radius);font-weight:700!important}
+    @media(max-width:768px){.nav-links{display:none}}
+    .page-hero{padding:8rem 0 4rem;text-align:center}
+    .page-hero h1{font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1rem}
+    .page-hero p{font-size:1.15rem;color:var(--color-text-muted);max-width:560px;margin:0 auto}
+    .section{padding:4rem 0}
+    .section-tag{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-accent);margin-bottom:.75rem}
+    .section-title{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.75rem}
+    .phase-grid{display:grid;grid-template-columns:1fr 3fr;gap:2rem;align-items:start;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--color-border)}
+    .phase-grid:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .phase-label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--color-accent);margin-bottom:.4rem}
+    .phase-days{font-size:1.5rem;font-weight:800;font-family:var(--font-heading);color:white;line-height:1}
+    .phase-title{font-size:1.15rem;font-weight:700;color:white;margin-bottom:.75rem;font-family:var(--font-heading)}
+    .phase-items{list-style:none;padding:0;margin:0}
+    .phase-items li{display:flex;align-items:flex-start;gap:.75rem;font-size:.95rem;color:var(--color-text-muted);padding:.6rem 0;border-bottom:1px solid rgba(51,65,85,.4)}
+    .phase-items li:last-child{border-bottom:none}
+    .phase-items li::before{content:"→";color:var(--color-accent);flex-shrink:0;margin-top:1px}
+    .divider-table{width:100%;border-collapse:collapse;margin-top:2rem}
+    .divider-table th{background:rgba(245,158,11,.08);color:var(--color-accent);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:.85rem 1.25rem;text-align:left;border-bottom:1px solid var(--color-border)}
+    .divider-table td{padding:.85rem 1.25rem;font-size:.9rem;color:var(--color-text-muted);border-bottom:1px solid rgba(51,65,85,.3);vertical-align:top}
+    .divider-table tr:last-child td{border-bottom:none}
+    .divider-table td:first-child{color:white;font-weight:600}
+    @media(max-width:640px){.phase-grid{grid-template-columns:1fr}}
+    footer{border-top:1px solid var(--color-border);padding:2.5rem 0;margin-top:4rem;background:rgba(15,23,42,.5)}
+    .footer-bottom{text-align:center;font-size:.8rem;color:var(--color-text-muted)}
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<nav class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">Rank<span>&</span>Ring</a>
+    <div class="nav-links">
+      <a href="how-it-works.html" style="color:white">How It Works</a><a href="hvac.html">HVAC</a><a href="plumbers.html">Plumbers</a><a href="electricians.html">Electricians</a><a href="index.html#pricing">Pricing</a><a href="analysis.html" class="nav-cta">Free Analysis</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="section-tag">No surprises</div>
+    <h1>Here's exactly how Rank & Ring works.</h1>
+    <p>From the first free analysis call to your monthly program — you know what's happening, when, and why at every step.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-tag">Phase 1</div>
+    <h2 class="section-title">The free analysis — before you spend anything</h2>
+    <div class="phase-grid">
+      <div><div class="phase-label">Timeline</div><div class="phase-days">Day 0</div><div style="font-size:.85rem;color:var(--color-text-muted);margin-top:.4rem">Free · No commitment</div></div>
+      <div>
+        <div class="phase-title">You fill out the form. We review your profile before we call.</div>
+        <ul class="phase-items">
+          <li>Ken pulls up your Google Business Profile and reads your most recent reviews before the call — so the 15 minutes is all signal</li>
+          <li>Finds your unclaimed listings on Yelp, Angi, HomeAdvisor, and BBB</li>
+          <li>Checks where you rank for your primary service keywords in your ZIP code right now</li>
+          <li>Compares your profile to your top 2–3 local competitors</li>
+          <li>On the call: walks you through your numbers live on screen — your rating, the gap, the listings, the ranking</li>
+          <li>No pricing discussion until you ask. No pressure. You see the data and decide.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-tag" style="margin-top:3rem">Phase 2</div>
+    <h2 class="section-title">Onboarding — the first 14 days</h2>
+    <div class="phase-grid">
+      <div><div class="phase-label">Timeline</div><div class="phase-days">Days 1–14</div><div style="font-size:.85rem;color:var(--color-text-muted);margin-top:.4rem">Your program launches</div></div>
+      <div>
+        <div class="phase-title">We set up everything in 14 days. You review and approve.</div>
+        <ul class="phase-items">
+          <li>Days 1–2: Onboarding call. We confirm your services, service areas, license number, insurance, and designated emergency contact</li>
+          <li>Days 3–5: Google Business Profile optimized. Unclaimed listings claimed, updated, and verified with your information</li>
+          <li>Days 5–10: Website built — 5 pages, mobile-first, license visible, service areas set, click-to-call on every page</li>
+          <li>Days 10–12: Call triage configured (Growth/Pro). Emergency keywords set for your trade. Calendar integration tested</li>
+          <li>Days 12–14: First content post drafted, sent to you for review and approval before anything is published</li>
+          <li>Day 14: Everything is live. You receive a confirmation with links to every updated and new listing</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-tag" style="margin-top:3rem">Phase 3</div>
+    <h2 class="section-title">The monthly rhythm — ongoing</h2>
+    <div class="phase-grid">
+      <div><div class="phase-label">Every month</div><div class="phase-days">Ongoing</div><div style="font-size:.85rem;color:var(--color-text-muted);margin-top:.4rem">While you do the work</div></div>
+      <div>
+        <div class="phase-title">Here's what happens every month without you having to think about it.</div>
+        <ul class="phase-items">
+          <li>Week 1: Content posts go out (Nextdoor + social). You approved them the week before</li>
+          <li>Week 2: Review generation follow-ups sent to customers from the past 30 days via automated SMS</li>
+          <li>Week 3: Google ranking check, competitor snapshot, listing accuracy audit</li>
+          <li>Week 4: Monthly performance report delivered — calls, reviews, ranking, content reach, and next-month priorities</li>
+          <li>Growth/Pro: 30-minute (or 60-minute Pro) review call with Ken to walk through the report and plan next month</li>
+          <li>Anytime: emergency reputation issues get a 24-hour response (Pro plan)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:linear-gradient(to bottom,transparent,rgba(15,23,42,.6),transparent)">
+  <div class="container">
+    <div class="section-tag">Responsibilities</div>
+    <h2 class="section-title">What you do vs. what we do.</h2>
+    <p style="color:var(--color-text-muted);max-width:560px">We run the program. You run the business. Here's the exact division.</p>
+    <table class="divider-table">
+      <thead><tr><th>You do</th><th>We do</th></tr></thead>
+      <tbody>
+        <tr><td>Show up and do great work</td><td>Make sure homeowners find you before they find your competitor</td></tr>
+        <tr><td>Send us photos from good jobs when you feel like it</td><td>Write the content, format it, target it to your neighborhood, post it, track engagement</td></tr>
+        <tr><td>Review and approve content before it goes live (takes 2 minutes)</td><td>Handle every revision until you're happy with it</td></tr>
+        <tr><td>Take the calls we flag as emergency dispatches</td><td>Answer every incoming call 24/7, triage, book scheduled jobs, send you emergency alerts</td></tr>
+        <tr><td>Join the monthly review call (30–60 min)</td><td>Prepare the data, run the meeting, send the recording</td></tr>
+        <tr><td>Nothing else</td><td>Everything else</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" style="text-align:center">
+  <div class="container">
+    <h2 style="font-size:clamp(1.75rem,3vw,2.25rem);margin-bottom:1rem">Ready to see your numbers?</h2>
+    <p style="color:var(--color-text-muted);max-width:500px;margin:0 auto 2rem">The free analysis is 15 minutes. You'll leave knowing exactly where you stand and what it would take to fix it.</p>
+    <a href="analysis.html" class="btn btn-primary">Get My Free Business Analysis →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container"><div class="footer-bottom"><a href="index.html" style="color:var(--color-accent);text-decoration:none">Rank & Ring</a> · © 2026 · <a href="mailto:hello@rankandring.io" style="color:var(--color-text-muted);text-decoration:none">hello@rankandring.io</a></div></div>
+</footer>
+</body>
+</html>

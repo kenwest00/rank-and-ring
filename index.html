@@ -1,309 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>24/7 AI Dispatcher for HVAC, Plumbing & Electrical Contractors | Rank & Ring</title>
-    <meta name="description"
-        content="Rank & Ring gives HVAC, plumbing, and electrical contractors a 24/7 AI dispatcher that books emergency jobs automatically. Stop losing $500 calls when you can't answer the phone.">
-
-    <!-- JSON-LD Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "name": "Rank & Ring",
-          "url": "https://rankandring.io",
-          "logo": "https://rankandring.io/logo.png",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-555-123-4567",
-            "contactType": "customer service"
-          }
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "Rank & Ring Virtual Dispatcher",
-          "applicationCategory": "BusinessApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What trades do you support?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We exclusively support independent HVAC, Plumbing, and Electrical contractors."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How fast can I get set up?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Your Virtual Dispatcher can be live and answering calls in under 7 days."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
-
-    <!-- Google Fonts for modern typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rank & Ring | Never Lose Business Again | Atlanta Trade Contractors</title>
+  <meta name="description" content="Rank & Ring manages your reputation, calls, website, and content so HVAC, plumbing, and electrical contractors never lose another job. Start with a free business analysis.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar{position:fixed;background:rgba(15,23,42,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-border);padding:1rem 0;top:0;left:0;right:0;z-index:100}
+    .nav-links{display:flex;gap:1.75rem;align-items:center}
+    .nav-links a{color:var(--color-text-muted);text-decoration:none;font-size:.95rem;font-weight:500;font-family:var(--font-heading);transition:var(--transition)}
+    .nav-links a:hover{color:white}
+    .nav-cta{background:var(--color-accent)!important;color:#000!important;padding:.5rem 1.25rem;border-radius:var(--radius);font-weight:700!important}
+    .nav-cta:hover{background:var(--color-accent-hover)!important}
+    @media(max-width:768px){.nav-links{display:none}}
+    .hero{min-height:100vh;display:flex;align-items:center;padding-top:80px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--color-accent);border-radius:999px;padding:.35rem 1rem;font-size:.85rem;font-weight:700;margin-bottom:1.5rem}
+    .hero h1{font-size:clamp(2.6rem,5vw,4rem);margin-bottom:1.25rem;line-height:1.1}
+    .hero-sub{font-size:1.2rem;color:var(--color-text-muted);margin-bottom:2rem;max-width:620px}
+    .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+    .trust-chips{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .chip{display:flex;align-items:center;gap:.4rem;font-size:.875rem;color:var(--color-text-muted)}
+    .chip-dot{width:6px;height:6px;border-radius:50%;background:var(--color-accent)}
+    .stats-bar{background:rgba(30,41,59,.5);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);padding:2rem 0}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
+    .stat-num{font-family:var(--font-heading);font-size:2.25rem;font-weight:800;color:var(--color-accent);line-height:1;margin-bottom:.4rem}
+    .stat-label{font-size:.875rem;color:var(--color-text-muted)}
+    @media(max-width:640px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+    .section-tag{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-accent);margin-bottom:.75rem}
+    .section-title{font-size:clamp(1.75rem,3.5vw,2.5rem);margin-bottom:.75rem}
+    .section-sub{font-size:1.1rem;color:var(--color-text-muted);margin-bottom:0;max-width:580px}
+    .pillars-section{padding:5rem 0}
+    .pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
+    .pillar-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.75rem;transition:var(--transition)}
+    .pillar-card:hover{border-color:rgba(245,158,11,.35);transform:translateY(-4px);box-shadow:var(--shadow-glow)}
+    .pillar-card.full{grid-column:1/-1}
+    .pillar-icon{font-size:2rem;margin-bottom:1rem}
+    .pillar-num{font-size:.75rem;font-weight:700;color:var(--color-accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem}
+    .pillar-name{font-size:1.1rem;font-weight:700;color:white;margin-bottom:.5rem;font-family:var(--font-heading)}
+    .pillar-desc{font-size:.95rem;color:var(--color-text-muted);margin:0;line-height:1.6}
+    .pillar-list{list-style:none;padding:0;margin:.75rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:.35rem 2rem}
+    .pillar-list li{font-size:.9rem;color:var(--color-text-muted);display:flex;align-items:center;gap:.5rem}
+    .pillar-list li::before{content:"✓";color:var(--color-accent);font-weight:700;flex-shrink:0}
+    @media(max-width:640px){.pillars-grid{grid-template-columns:1fr}.pillar-list{grid-template-columns:1fr}}
+    .how-section{padding:5rem 0}
+    .steps-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem}
+    .step-box{text-align:center}
+    .step-circle{width:56px;height:56px;border-radius:50%;background:rgba(245,158,11,.15);border:2px solid rgba(245,158,11,.4);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;font-size:1.25rem;color:var(--color-accent);margin:0 auto 1rem}
+    .step-title{font-size:.95rem;font-weight:700;color:white;margin-bottom:.4rem;font-family:var(--font-heading)}
+    .step-desc{font-size:.85rem;color:var(--color-text-muted);margin:0}
+    @media(max-width:640px){.steps-flow{grid-template-columns:1fr 1fr}}
+    .trades-section{padding:5rem 0}
+    .trades-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+    .trade-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2rem;text-align:center;text-decoration:none;display:block;transition:var(--transition)}
+    .trade-card:hover{transform:translateY(-6px);border-color:var(--color-accent);box-shadow:var(--shadow-glow)}
+    .trade-icon{font-size:2.5rem;margin-bottom:1rem}
+    .trade-card h3{font-size:1.25rem;margin-bottom:.5rem;color:white}
+    .trade-card p{font-size:.9rem;color:var(--color-text-muted);margin-bottom:1rem}
+    .trade-link-cta{color:var(--color-accent);font-weight:700;font-size:.9rem}
+    @media(max-width:640px){.trades-grid{grid-template-columns:1fr}}
+    .testimonials-section{padding:5rem 0}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+    .testimonial-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.75rem}
+    .stars{color:var(--color-accent);font-size:1rem;margin-bottom:1rem;letter-spacing:2px}
+    .testimonial-card blockquote{font-size:.95rem;color:var(--color-text-muted);font-style:italic;line-height:1.65;margin-bottom:1.25rem}
+    .author-row{display:flex;align-items:center;gap:.75rem}
+    .author-avatar{width:40px;height:40px;border-radius:50%;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--color-accent);font-family:var(--font-heading);flex-shrink:0;font-size:.9rem}
+    .author-name{font-size:.9rem;font-weight:700;color:white;font-family:var(--font-heading)}
+    .author-co{font-size:.8rem;color:var(--color-text-muted)}
+    @media(max-width:768px){.testimonials-grid{grid-template-columns:1fr}}
+    .pricing-section{padding:5rem 0}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+    .price-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2rem;display:flex;flex-direction:column;position:relative}
+    .price-card.featured{border-color:var(--color-accent);box-shadow:var(--shadow-glow)}
+    .featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--color-accent);color:#000;font-size:.75rem;font-weight:800;padding:.25rem 1rem;border-radius:999px;white-space:nowrap;font-family:var(--font-heading)}
+    .price-name{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted);margin-bottom:.75rem}
+    .price-amount{font-size:2.75rem;font-weight:800;font-family:var(--font-heading);color:white;line-height:1}
+    .price-period{font-size:.9rem;color:var(--color-text-muted);margin-bottom:.25rem}
+    .price-note{font-size:.85rem;color:var(--color-accent);font-weight:600;margin-bottom:1.5rem}
+    .price-divider{border:none;border-top:1px solid var(--color-border);margin:1.25rem 0}
+    .price-feature{display:flex;align-items:flex-start;gap:.6rem;font-size:.9rem;color:var(--color-text-muted);margin-bottom:.6rem}
+    .price-feature .chk{color:var(--color-accent);flex-shrink:0;margin-top:2px;font-weight:700}
+    .price-feature.off{opacity:.35}
+    .price-cta{margin-top:auto;padding-top:1.5rem}
+    @media(max-width:768px){.pricing-grid{grid-template-columns:1fr}}
+    .programs-section{padding:5rem 0}
+    .programs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+    .program-card{border-radius:var(--radius-lg);padding:2.5rem;display:block;text-decoration:none;transition:var(--transition);position:relative;overflow:hidden}
+    .program-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+    .program-card.veteran{background:rgba(180,83,9,.12);border:1px solid rgba(245,158,11,.3)}
+    .program-card.veteran::before{background:linear-gradient(90deg,#f59e0b,#d97706)}
+    .program-card.graduate{background:rgba(22,163,74,.12);border:1px solid rgba(22,163,74,.3)}
+    .program-card.graduate::before{background:linear-gradient(90deg,#16a34a,#15803d)}
+    .program-card:hover{transform:translateY(-5px)}
+    .program-badge{display:inline-block;padding:.3rem .9rem;border-radius:999px;font-size:.8rem;font-weight:800;margin-bottom:1rem;font-family:var(--font-heading)}
+    .veteran .program-badge{background:rgba(245,158,11,.2);color:#f59e0b;border:1px solid rgba(245,158,11,.4)}
+    .graduate .program-badge{background:rgba(22,163,74,.2);color:#4ade80;border:1px solid rgba(22,163,74,.4)}
+    .program-card h3{color:white;font-size:1.4rem;margin-bottom:.5rem}
+    .program-card p{font-size:.95rem;color:var(--color-text-muted);margin-bottom:1rem}
+    .program-discount{font-size:1.5rem;font-weight:800;font-family:var(--font-heading)}
+    .veteran .program-discount{color:#f59e0b}
+    .graduate .program-discount{color:#4ade80}
+    @media(max-width:640px){.programs-grid{grid-template-columns:1fr}}
+    .cta-section{padding:5rem 0}
+    .cta-card{background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(14,165,233,.06));border:1px solid rgba(245,158,11,.25);border-radius:var(--radius-lg);padding:3rem}
+    .cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+    .cta-form-wrap{background:rgba(0,0,0,.25);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2rem}
+    .cta-form-wrap h3{font-size:1.25rem;margin-bottom:.4rem;color:white}
+    .cta-form-wrap p{font-size:.9rem;margin-bottom:1.25rem}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
+    .form-single{margin-bottom:.75rem}
+    .form-note{font-size:.8rem;color:var(--color-text-muted);text-align:center;margin-top:.75rem;margin-bottom:0}
+    @media(max-width:768px){.cta-inner{grid-template-columns:1fr}}
+    .faq-section{padding:5rem 0}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem}
+    .faq-item{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius);padding:1.5rem}
+    .faq-item h3{font-size:1rem;margin-bottom:.5rem;color:white}
+    .faq-item p{font-size:.9rem;color:var(--color-text-muted);margin:0}
+    @media(max-width:640px){.faq-grid{grid-template-columns:1fr}}
+    footer{border-top:1px solid var(--color-border);padding:3rem 0;margin-top:4rem;background:rgba(15,23,42,.5)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}
+    .footer-brand p{font-size:.9rem;color:var(--color-text-muted);margin-top:.75rem;max-width:260px}
+    .footer-col h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:1rem;font-family:var(--font-heading)}
+    .footer-col a{display:block;color:var(--color-text-muted);text-decoration:none;font-size:.9rem;margin-bottom:.5rem;transition:var(--transition)}
+    .footer-col a:hover{color:white}
+    .footer-bottom{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--color-border);text-align:center;font-size:.8rem;color:var(--color-text-muted)}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+  </style>
 </head>
-
 <body>
-    <!-- Background graphical effect -->
-    <div class="bg-pattern"></div>
+<div class="bg-pattern"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-accent);">
-                    <path
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                    </path>
-                </svg>
-                Rank<span>&</span>Ring
-            </a>
-            <div class="nav-links">
-                <a href="#calculator" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">ROI
-                    Calculator</a>
-            </div>
+<nav class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">Rank<span>&</span>Ring</a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="hvac.html">HVAC</a>
+      <a href="plumbers.html">Plumbers</a>
+      <a href="electricians.html">Electricians</a>
+      <a href="#pricing">Pricing</a>
+      <a href="veterans.html">Veterans</a>
+      <a href="analysis.html" class="nav-cta">Free Analysis</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">🛡 Built for trade contractors in Atlanta</div>
+    <h1>You do great work.<br>Your business should <span class="text-accent">show it.</span></h1>
+    <p class="hero-sub">Rank & Ring manages your reputation, your calls, your website, and your content — so homeowners find you, trust you, and hire you first. It starts with a free analysis.</p>
+    <div class="hero-ctas">
+      <a href="analysis.html" class="btn btn-primary">Get My Free Business Analysis →</a>
+      <a href="how-it-works.html" class="btn btn-secondary">See How It Works</a>
+    </div>
+    <div class="trust-chips">
+      <div class="chip"><div class="chip-dot"></div>No setup fee</div>
+      <div class="chip"><div class="chip-dot"></div>Cancel anytime</div>
+      <div class="chip"><div class="chip-dot"></div>Local to Atlanta</div>
+      <div class="chip"><div class="chip-dot"></div>Results in 30–60 days</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div><div class="stat-num">85%</div><div class="stat-label">of callers won't leave a voicemail — they call the next contractor</div></div>
+      <div><div class="stat-num">4.0★</div><div class="stat-label">minimum rating to appear in Google's local top 3</div></div>
+      <div><div class="stat-num">5 min</div><div class="stat-label">how fast you need to respond to win an emergency job</div></div>
+      <div><div class="stat-num">3 of 4</div><div class="stat-label">homeowners read reviews before they ever call anyone</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="pillars-section">
+  <div class="container">
+    <div class="section-tag">The Rank & Ring System</div>
+    <h2 class="section-title">One program. Five things working for you at once.</h2>
+    <p class="section-sub">Most contractors patch problems one at a time. We run the whole system — so nothing falls through.</p>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">⭐</div>
+        <div class="pillar-num">Pillar 1</div>
+        <div class="pillar-name">Reputation & Ratings</div>
+        <p class="pillar-desc">We get the reviews you've already earned posted where they count — Google, Yelp, Angi — and clean up the listings that are working against you right now without your knowledge.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">📞</div>
+        <div class="pillar-num">Pillar 2</div>
+        <div class="pillar-name">Call Triage & Smart Dispatch</div>
+        <p class="pillar-desc">Our AI answers every call 24/7. Emergency calls — AC down, burst pipe, no heat — reach your designated contact immediately by text. Scheduled jobs book straight to your calendar.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🌐</div>
+        <div class="pillar-num">Pillar 3</div>
+        <div class="pillar-name">Website & Trust Building</div>
+        <p class="pillar-desc">A fast, mobile-ready professional site that turns a searcher into a caller. Your license, insurance, reviews, and service areas are front and center — the trust signals homeowners look for.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">✍️</div>
+        <div class="pillar-num">Pillar 4</div>
+        <div class="pillar-name">Content Engine</div>
+        <p class="pillar-desc">Fresh content posted in your voice on Nextdoor, Facebook, and Instagram — seasonal tips, job highlights, expert advice — so your neighborhood knows who to call before they ever need to search.</p>
+      </div>
+      <div class="pillar-card full">
+        <div class="pillar-icon">📊</div>
+        <div class="pillar-num">Pillar 5 — The Intelligence Layer</div>
+        <div class="pillar-name">Monthly Performance Review</div>
+        <p class="pillar-desc">Every month you see exactly what the program is doing. Calls handled, rating movement, search ranking, content reach, revenue attribution — and what we're prioritizing next month to keep the numbers moving.</p>
+        <ul class="pillar-list">
+          <li>Call volume &amp; triage breakdown</li>
+          <li>Google ranking movement</li>
+          <li>New reviews generated</li>
+          <li>Content reach by platform</li>
+          <li>Revenue attribution estimate</li>
+          <li>Next-month priority plan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-section" style="background:linear-gradient(to bottom,transparent,rgba(15,23,42,.6),transparent)">
+  <div class="container text-center">
+    <div class="section-tag">Simple Process</div>
+    <h2 class="section-title">It starts with a free 15-minute analysis.</h2>
+    <p class="section-sub" style="margin:0 auto 0">No cost. No commitment. You see exactly where you stand before you spend a dollar.</p>
+    <div class="steps-flow">
+      <div class="step-box"><div class="step-circle">1</div><div class="step-title">We analyze your business</div><p class="step-desc">Google rating, unclaimed listings, local search ranking, competitor gap, and missed call estimate.</p></div>
+      <div class="step-box"><div class="step-circle">2</div><div class="step-title">We show you the gaps</div><p class="step-desc">Specific, honest, plain-English. You see exactly what's costing you jobs right now.</p></div>
+      <div class="step-box"><div class="step-circle">3</div><div class="step-title">You choose your program</div><p class="step-desc">Essential, Growth, or Pro — based on where you are and how fast you want to grow.</p></div>
+      <div class="step-box"><div class="step-circle">4</div><div class="step-title">We run it for you</div><p class="step-desc">You do the work. We handle your reputation, calls, website, and content. Everything else.</p></div>
+    </div>
+    <div style="margin-top:2.5rem"><a href="analysis.html" class="btn btn-primary">Start with the free analysis →</a></div>
+  </div>
+</section>
+
+<section class="trades-section">
+  <div class="container">
+    <div class="section-tag">By Trade</div>
+    <h2 class="section-title">Built for your specific trade.</h2>
+    <p class="section-sub">HVAC, plumbing, and electrical each have different peaks, emergencies, and trust triggers. We know the difference.</p>
+    <div class="trades-grid">
+      <a href="hvac.html" class="trade-card"><div class="trade-icon">🌡</div><h3>HVAC Contractors</h3><p>Emergency AC calls in August. Pre-season tune-up traffic. System replacements. We know your calendar and your customer.</p><div class="trade-link-cta">See the HVAC program →</div></a>
+      <a href="plumbers.html" class="trade-card"><div class="trade-icon">🔧</div><h3>Plumbers</h3><p>Burst pipe dispatch at 2am. Water heater replacements. Drain service leads. Emergency triage built for your highest-value calls.</p><div class="trade-link-cta">See the Plumbing program →</div></a>
+      <a href="electricians.html" class="trade-card"><div class="trade-icon">⚡</div><h3>Electricians</h3><p>Panel upgrades. EV charger installs. Safety inspections. License and trust signals on every page we build for you.</p><div class="trade-link-cta">See the Electrical program →</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section" style="background:linear-gradient(to bottom,transparent,rgba(15,23,42,.5),transparent)">
+  <div class="container">
+    <div class="section-tag text-center">Real Results</div>
+    <h2 class="section-title text-center">Real contractors. Real results.</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card"><div class="stars">★★★★★</div><blockquote>"I was at 4.1 stars and not showing up in Decatur searches. Six weeks later I'm at 4.7 and my phone rings every day. I didn't have to do anything except keep doing good work."</blockquote><div class="author-row"><div class="author-avatar">MT</div><div><div class="author-name">Marcus T.</div><div class="author-co">HVAC Owner · Decatur, GA</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><blockquote>"They found three listings I didn't even know existed — one had a bad review I'd never seen. They cleaned it all up. Now I actually look like the business I am."</blockquote><div class="author-row"><div class="author-avatar">SR</div><div><div class="author-name">Sandra R.</div><div class="author-co">Plumbing · Marietta, GA</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><blockquote>"I was in a crawl space when a lady called about her furnace. The AI handled it, texted me, I called her back in 4 minutes and got the job. That's never happened to me before."</blockquote><div class="author-row"><div class="author-avatar">DW</div><div><div class="author-name">Derek W.</div><div class="author-co">HVAC · Atlanta, GA</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="container text-center">
+    <div class="section-tag">Transparent Pricing</div>
+    <h2 class="section-title">No setup fees. No surprises.</h2>
+    <p class="section-sub" style="margin:0 auto 0">All plans include your free Business Health Analysis. We don't start billing until you've seen your results.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Essential</div>
+        <div class="price-amount">$799</div>
+        <div class="price-period">/month</div>
+        <div class="price-note">No setup fee · Cancel anytime</div>
+        <hr class="price-divider">
+        <div class="price-feature"><span class="chk">✓</span>Free Business Health Analysis</div>
+        <div class="price-feature"><span class="chk">✓</span>Google Business Profile optimization</div>
+        <div class="price-feature"><span class="chk">✓</span>Review generation system</div>
+        <div class="price-feature"><span class="chk">✓</span>3 unclaimed listing cleanups</div>
+        <div class="price-feature"><span class="chk">✓</span>5-page professional website</div>
+        <div class="price-feature"><span class="chk">✓</span>Monthly performance report</div>
+        <div class="price-feature off"><span class="chk">—</span>Call triage &amp; AI dispatch</div>
+        <div class="price-feature off"><span class="chk">—</span>Content engine</div>
+        <div class="price-cta"><a href="analysis.html" class="btn btn-secondary" style="width:100%;font-size:1rem">Get Started →</a></div>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-badge">⚡ Most Popular</div>
+        <div class="price-name">Growth</div>
+        <div class="price-amount">$1,299</div>
+        <div class="price-period">/month</div>
+        <div class="price-note">No setup fee · Cancel anytime</div>
+        <hr class="price-divider">
+        <div class="price-feature"><span class="chk">✓</span>Everything in Essential</div>
+        <div class="price-feature"><span class="chk">✓</span>AI call triage &amp; smart dispatch</div>
+        <div class="price-feature"><span class="chk">✓</span>Emergency call separation &amp; alerts</div>
+        <div class="price-feature"><span class="chk">✓</span>Calendar booking for scheduled jobs</div>
+        <div class="price-feature"><span class="chk">✓</span>4 posts/month (Nextdoor + social)</div>
+        <div class="price-feature"><span class="chk">✓</span>Monthly report + 30-min review call</div>
+        <div class="price-feature"><span class="chk">✓</span>Priority support (2-hr response)</div>
+        <div class="price-cta"><a href="analysis.html" class="btn btn-primary" style="width:100%;font-size:1rem">Claim Growth Plan →</a></div>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Pro</div>
+        <div class="price-amount">$1,999</div>
+        <div class="price-period">/month</div>
+        <div class="price-note">No setup fee · Cancel anytime</div>
+        <hr class="price-divider">
+        <div class="price-feature"><span class="chk">✓</span>Everything in Growth</div>
+        <div class="price-feature"><span class="chk">✓</span>8 posts/month across all platforms</div>
+        <div class="price-feature"><span class="chk">✓</span>Monthly 1:1 strategy call (60 min)</div>
+        <div class="price-feature"><span class="chk">✓</span>Competitor tracking dashboard</div>
+        <div class="price-feature"><span class="chk">✓</span>Reputation crisis response (24 hr)</div>
+        <div class="price-feature"><span class="chk">✓</span>Veteran &amp; graduate discounts apply</div>
+        <div class="price-cta"><a href="analysis.html" class="btn btn-secondary" style="width:100%;font-size:1rem">Get Started →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="programs-section">
+  <div class="container">
+    <div class="section-tag">Special Programs</div>
+    <h2 class="section-title">You've earned a discount.</h2>
+    <div class="programs-grid">
+      <a href="veterans.html" class="program-card veteran"><div class="program-badge">🇺🇸 Veteran Contractor Program</div><h3>You served. We've got you.</h3><p>Honorably discharged veterans receive a significant discount on any monthly plan. Verify with DD-214.</p><div class="program-discount">25% off + 2 months free</div></a>
+      <a href="graduates.html" class="program-card graduate"><div class="program-badge">🎓 New Trade Graduate Program</div><h3>Just got your license? Start strong.</h3><p>Recent graduates of accredited trade programs get a running start. Apply within 24 months of graduation.</p><div class="program-discount">20% off + 1 month free</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-inner">
+        <div>
+          <div class="section-tag">Free · No Obligation</div>
+          <h2 style="font-size:clamp(1.75rem,3vw,2.25rem);margin-bottom:1rem">Not sure where to start?<br>Start here — it's free.</h2>
+          <p style="font-size:1rem;margin-bottom:1.5rem">In 15 minutes we'll show you your Google ranking, your unclaimed listings, your competitor gap, and how much revenue you're likely losing right now. No cost. No commitment. Just your numbers.</p>
+          <div class="trust-chips">
+            <div class="chip"><div class="chip-dot"></div>No credit card</div>
+            <div class="chip"><div class="chip-dot"></div>No contract</div>
+            <div class="chip"><div class="chip-dot"></div>No sales pressure until you ask</div>
+          </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero container">
-        <div class="hero-grid">
-            <div class="hero-content fade-in-up">
-                <div class="hero-badges">
-                    <span class="badge">HVAC</span>
-                    <span class="badge">Plumbing</span>
-                    <span class="badge">Electrical</span>
-                </div>
-                <h1>Stop Losing $500 <span class="text-accent">Emergency Calls</span> When Your Hands Are Dirty.</h1>
-                <p>You can't answer the phone while under a sink or in an attic. That missed call just went to the next
-                    contractor on Google. Get a 24/7 Virtual Dispatcher that books jobs automatically.</p>
-
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                    <a href="quiz.html" class="btn btn-primary">Find out how much you're losing →</a>
-                    <a href="#" class="btn btn-secondary" onclick="alert('Download Checklist PDF placeholder')">Download
-                        the Emergency Call Checklist</a>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                    <div
-                        style="width: 40px; height: 40px; background: rgba(34, 197, 94, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #22c55e;">
-                        JD</div>
-                    <div>
-                        <p style="margin: 0; font-size: 0.875rem; color: white; font-style: italic;">"Booked 4 water
-                            heaters in Month 1 while I was working."</p>
-                        <span style="font-size: 0.75rem; color: var(--color-text-muted);">— John D., Solo Plumber</span>
-                    </div>
-                </div>
-
-                <!-- Frictionless Demo Widget -->
-                <div class="sms-demo fade-in-up delay-2">
-                    <div class="sms-icon">📱</div>
-                    <div style="text-align: left;">
-                        <strong style="display: block; color: white;">Try the AI Right Now.</strong>
-                        <span style="color: var(--color-text-muted); font-size: 0.875rem;">Interactive SMS demo coming
-                            soon. See the simulation to the right.</span>
-                    </div>
-                </div>
+        <div class="cta-form-wrap">
+          <h3>Get my free business analysis</h3>
+          <p>You'll hear from Ken within 60 minutes.</p>
+          <form action="thankyou.html" method="get">
+            <div class="form-row">
+              <input type="text" name="name" placeholder="First name" required>
+              <input type="text" placeholder="Business name" required>
             </div>
-
-            <!-- Visual Representation of the AI Receptionist -->
-            <div class="hero-visual fade-in-up delay-1">
-                <div class="glass-card" style="border-top: 4px solid var(--color-blue);">
-                    <div
-                        style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; margin-bottom: 1rem;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <div style="width: 10px; height: 10px; background: #22c55e; border-radius: 50%;"></div>
-                            <strong>AI Dispatcher Active</strong>
-                        </div>
-                        <span style="color: var(--color-text-muted); font-size: 0.875rem;">Just now</span>
-                    </div>
-
-                    <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <p style="margin: 0; font-size: 0.875rem;"><em>Incoming SMS from Lead:</em><br />
-                            <span style="color: white; font-weight: 500;">"My AC just stopped working and it's 95
-                                degrees. Can someone come out?"</span>
-                        </p>
-                    </div>
-
-                    <div
-                        style="background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.2); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <p style="margin: 0; font-size: 0.875rem; color: var(--color-blue);"><strong
-                                style="color: white;">Rank & Ring AI:</strong><br />
-                            "I can help with that! Our emergency dispatch fee is $89. We have a technician available
-                            today between 2PM-4PM. Reply 'YES' to secure this spot."</p>
-                    </div>
-
-                    <div
-                        style="display: flex; gap: 0.5rem; align-items: center; justify-content: center; background: rgba(245, 158, 11, 0.1); color: var(--color-accent); padding: 0.75rem; border-radius: 8px; font-weight: bold; border: 1px solid rgba(245, 158, 11, 0.3);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        Job Booked to Local Calendar
-                    </div>
-                </div>
+            <div class="form-row">
+              <select required><option value="" disabled selected>Your trade</option><option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>Other</option></select>
+              <input type="text" placeholder="Your city">
             </div>
+            <div class="form-single"><input type="tel" placeholder="Best phone number" required></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;font-size:1rem">Get My Free Analysis →</button>
+          </form>
+          <p class="form-note">We review your profile before we call — not after.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Missed Call ROI Calculator Section -->
-    <section id="calculator" class="calculator-section">
-        <div class="container">
-            <div class="text-center mb-lg fade-in-up">
-                <h2>The Cost of <span class="text-accent">Unanswered Calls</span></h2>
-                <p style="max-width: 600px; margin: 0 auto;">Every time a potential customer hits your voicemail, they
-                    hang up and call the next contractor on the list. See exactly how much money is leaving your
-                    business.</p>
-            </div>
+<section class="faq-section">
+  <div class="container">
+    <div class="section-tag text-center">Common Questions</div>
+    <h2 class="section-title text-center">Questions we hear before the first call.</h2>
+    <div class="faq-grid">
+      <div class="faq-item"><h3>Do I have to sign a long-term contract?</h3><p>No. All plans are month-to-month. Cancel with 30 days notice. We keep clients by delivering results, not by trapping them in contracts.</p></div>
+      <div class="faq-item"><h3>How long does it take to see results?</h3><p>Most contractors see rating movement within 30–45 days and measurable search ranking changes within 60 days. Your website is live within 14 days of signing.</p></div>
+      <div class="faq-item"><h3>What if I already have a website?</h3><p>We'll audit it in the free analysis. If it's solid, we optimize it. If it's hurting you, we'll tell you exactly why and what we'd do differently.</p></div>
+      <div class="faq-item"><h3>How does call triage know what's an emergency?</h3><p>The AI is trained on trade-specific language — "AC won't turn on," "pipe burst," "no power." Those route to you immediately. Tune-ups and estimates book to your calendar.</p></div>
+      <div class="faq-item"><h3>Do I review content before it goes live?</h3><p>Yes, always. You approve every post before it's published. We write it, you review it, we post it. Your voice, your standards.</p></div>
+      <div class="faq-item"><h3>Is there a veteran or graduate discount?</h3><p>Yes. Veterans get 25% off + 2 months free with DD-214. Recent trade graduates get 20% off + 1 month free within 24 months of graduation.</p></div>
+    </div>
+  </div>
+</section>
 
-            <div class="calc-grid">
-                <div class="glass-card fade-in-up delay-1">
-                    <h3
-                        style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">
-                        Your Numbers</h3>
-
-                    <div class="input-group">
-                        <label for="avgTicket">Average Ticket Size ($) <span class="value-display"
-                                id="ticketVal">$800</span></label>
-                        <input type="range" id="avgTicket" class="range-slider" min="150" max="5000" step="50"
-                            value="800">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="missedCalls">Missed Calls Per Week <span class="value-display"
-                                id="callsVal">4</span></label>
-                        <input type="range" id="missedCalls" class="range-slider" min="1" max="25" step="1" value="4">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="closeRate">Estimated Close Rate (%) <span class="value-display"
-                                id="closeVal">40%</span></label>
-                        <input type="range" id="closeRate" class="range-slider" min="10" max="100" step="5" value="40">
-                    </div>
-                </div>
-
-                <div class="glass-card fade-in-up delay-2"
-                    style="display: flex; flex-direction: column; justify-content: center; border-color: rgba(245, 158, 11, 0.3);">
-                    <div class="result-box">
-                        <h4 style="color: var(--color-text-main); font-size: 1.25rem;">Money Left on the Table</h4>
-                        <div class="result-value" id="monthlyLoss">$5,120</div>
-                        <p style="margin: 0; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Every
-                            Single Month</p>
-                    </div>
-
-                    <div style="margin-top: 1.5rem; text-align: center;">
-                        <p style="color: var(--color-text-main); font-weight: 500;">Can you afford to keep losing this
-                            to competitors?</p>
-                        <a href="quiz.html" class="btn btn-primary" style="width: 100%;">Plug the leak. Take the Quiz
-                            →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof / No-BS Anchor -->
-    <section class="container" style="padding: var(--spacing-xl) 0;">
-        <div class="text-center mb-lg">
-            <h2>Real Leads. <span class="text-blue">Zero BS.</span></h2>
-            <p style="max-width: 600px; margin: 0 auto;">No shared leads. No long-term lock-ins. Just your own digital
-                asset generating calls specifically for you.</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-            <div class="glass-card">
-                <div style="color: var(--color-accent); margin-bottom: 1rem;">★★★★★</div>
-                <p style="color: white; font-style: italic;">"Before: Missing 4 calls a week while on the job. After:
-                    Rank & Ring's AI booked 3 water heater replacements automatically in month one."</p>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
-                    <div
-                        style="width: 40px; height: 40px; background: var(--color-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">
-                        JD</div>
-                    <div>
-                        <strong style="display: block; color: white;">John D.</strong>
-                        <span style="font-size: 0.875rem; color: var(--color-text-muted);">Solo Plumber, Atlanta
-                            GA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Global Footer -->
-    <footer
-        style="border-top: 1px solid var(--color-border); padding: 3rem 0; margin-top: 4rem; background: rgba(15, 23, 42, 0.5);">
-        <div class="container"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
-            <div>
-                <a href="index.html" class="logo" style="margin-bottom: 1rem;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        style="color: var(--color-accent);">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                        </path>
-                    </svg>
-                    Rank<span>&</span>Ring
-                </a>
-                <p style="font-size: 0.875rem;">AI-powered dispatching and local SEO for independent contractors.</p>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 1rem;">Trades</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 0.5rem;"><a href="hvac.html"
-                            style="color: var(--color-text-muted); text-decoration: none;">HVAC Pros</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="plumbers.html"
-                            style="color: var(--color-text-muted); text-decoration: none;">Plumbers</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="electricians.html"
-                            style="color: var(--color-text-muted); text-decoration: none;">Electricians</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 1rem;">Contact</h4>
-                <p style="font-size: 0.875rem; margin-bottom: 0.5rem;">123 Business Pkwy, Suite 100<br>Atlanta, GA 30301
-                </p>
-                <p style="font-size: 0.875rem; margin-bottom: 0.5rem;"><a href="mailto:hello@rankandring.io"
-                        style="color: var(--color-accent); text-decoration: none;">hello@rankandring.io</a></p>
-                <p style="font-size: 0.875rem;"><a href="tel:+15551234567"
-                        style="color: var(--color-text-muted); text-decoration: none;">(555) 123-4567</a></p>
-            </div>
-        </div>
-        <div class="container"
-            style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.75rem; color: var(--color-text-muted);">
-            &copy; 2026 Rank & Ring. All rights reserved.
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo">Rank<span>&</span>Ring</a><p>Complete business protection for trade contractors. Reputation, calls, website, and content — one program.</p></div>
+      <div class="footer-col"><h4>Trades</h4><a href="hvac.html">HVAC Contractors</a><a href="plumbers.html">Plumbers</a><a href="electricians.html">Electricians</a></div>
+      <div class="footer-col"><h4>Programs</h4><a href="veterans.html">Veteran Program</a><a href="graduates.html">Graduate Program</a><a href="how-it-works.html">How It Works</a></div>
+      <div class="footer-col"><h4>Get Started</h4><a href="analysis.html">Free Analysis</a><a href="#pricing">Pricing</a><a href="book.html">Book a Call</a><a href="mailto:hello@rankandring.io">hello@rankandring.io</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 Rank & Ring. All rights reserved. · Atlanta, GA</div>
+  </div>
+</footer>
 </body>
-
 </html>

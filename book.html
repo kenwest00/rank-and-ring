@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Free Audit | Rank & Ring</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{display:flex;flex-direction:column;min-height:100vh}
+    .book-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5rem 2rem 3rem;text-align:center}
+    .book-inner{max-width:640px;width:100%}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--color-accent);border-radius:999px;padding:.35rem 1rem;font-size:.85rem;font-weight:700;margin-bottom:1.5rem}
+    .book-inner h1{font-size:clamp(1.9rem,4vw,2.75rem);line-height:1.15;margin-bottom:1rem}
+    .book-inner p{font-size:1.05rem;color:var(--color-text-muted);margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto}
+    .covers{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+    .cover-item{display:flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--color-text-muted)}
+    .cover-icon{font-size:1.2rem}
+    .cal-placeholder{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:3rem 2rem;margin-bottom:2rem}
+    .cal-placeholder p{font-size:.9rem;color:var(--color-text-muted);margin:0}
+    .cal-placeholder strong{display:block;font-size:1.1rem;color:white;margin-bottom:.5rem;font-family:var(--font-heading)}
+    .direct-contact{font-size:.9rem;color:var(--color-text-muted);margin-bottom:2rem}
+    .direct-contact a{color:var(--color-accent);font-weight:700;text-decoration:none}
+    .testimonial-mini{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.5rem;text-align:left;max-width:500px;margin:0 auto}
+    .testimonial-mini blockquote{font-size:.9rem;color:var(--color-text-muted);font-style:italic;line-height:1.6;margin-bottom:.75rem}
+    .author-mini{display:flex;align-items:center;gap:.6rem}
+    .avatar-mini{width:32px;height:32px;border-radius:50%;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--color-accent);font-family:var(--font-heading);font-size:.75rem;flex-shrink:0}
+    footer{border-top:1px solid var(--color-border);padding:1.5rem 0;background:rgba(15,23,42,.5)}
+    .footer-bottom{text-align:center;font-size:.8rem;color:var(--color-text-muted)}
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+
+<div class="book-wrap">
+  <div class="book-inner">
+    <div class="eyebrow">📅 Free · 15 minutes · No pitch</div>
+    <h1 id="book-headline">Your free 15-minute business analysis.</h1>
+    <p id="book-sub">We've already looked at your profile. Pick a time and we'll walk through exactly what we found — your rating, your listings, your competitor gap, and what it takes to fix it. No pitch unless you ask.</p>
+
+    <div class="covers">
+      <div class="cover-item"><span class="cover-icon">📊</span>Your Google ranking vs. competitors</div>
+      <div class="cover-item"><span class="cover-icon">📋</span>Unclaimed listings hurting you</div>
+      <div class="cover-item"><span class="cover-icon">📞</span>Estimated monthly revenue lost</div>
+    </div>
+
+    <!-- Calendly embed target — replace href with your Calendly link -->
+    <div class="cal-placeholder">
+      <strong>Pick a time that works for you</strong>
+      <p>Add your Calendly embed here: replace this div with &lt;div class="calendly-inline-widget" data-url="https://calendly.com/your-link" style="min-width:320px;height:630px;"&gt;&lt;/div&gt; and the Calendly script tag.</p>
+      <div style="margin-top:1.5rem">
+        <a href="https://calendly.com" target="_blank" class="btn btn-primary" style="font-size:1rem">📅 Open Scheduling Calendar →</a>
+      </div>
+    </div>
+
+    <p class="direct-contact">Prefer to text? Reach Ken directly: <a href="tel:+14045550123">(404) 555-0123</a></p>
+
+    <div class="testimonial-mini">
+      <blockquote>"Took 15 minutes. He knew exactly what was wrong with my Google profile before I said a word. Within a week my phone was ringing again."</blockquote>
+      <div class="author-mini"><div class="avatar-mini">DT</div><div><div style="font-size:.85rem;font-weight:700;color:white;font-family:var(--font-heading)">Dave T.</div><div style="font-size:.75rem;color:var(--color-text-muted)">Atlanta Premier HVAC</div></div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container"><div class="footer-bottom"><a href="index.html" style="color:var(--color-accent);text-decoration:none">Rank & Ring</a> · © 2026 · <a href="mailto:hello@rankandring.io" style="color:var(--color-text-muted);text-decoration:none">hello@rankandring.io</a></div></div>
+</footer>
+
+<script>
+// Personalize from URL params
+const p = new URLSearchParams(window.location.search);
+const name = p.get('name');
+const city = p.get('city');
+const rating = p.get('rating');
+if (name) {
+  document.getElementById('book-headline').textContent = 'Hey ' + name + ' — your free 15-minute business analysis.';
+}
+let sub = 'We\'ve already looked at your profile.';
+if (city) sub += ' We pulled up your ' + city + ' listing specifically.';
+if (rating) sub += ' You\'re currently at ' + rating + ' stars — we\'ll show you what it takes to reach the local top 3.';
+sub += ' Pick a time and we\'ll walk through your numbers. No pitch unless you ask.';
+document.getElementById('book-sub').textContent = sub;
+</script>
+</body>
+</html>

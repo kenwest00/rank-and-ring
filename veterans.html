@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veteran Contractor Program — 25% Off + 3 Months Free | Rank & Ring</title>
+  <meta name="description" content="Honorably discharged veterans starting or growing a trade business (HVAC, plumbing, electrical) get 25% off setup and 3 months free on any Rank & Ring plan. Verify in 60 seconds." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .bg-pattern {
+      background:
+        radial-gradient(circle at 15% 50%, rgba(180,83,9,0.15), transparent 30%),
+        radial-gradient(circle at 85% 30%, rgba(245,158,11,0.12), transparent 30%);
+    }
+    .text-accent { color: #f59e0b; }
+    .badge-vet { background:rgba(180,83,9,0.15); color:#f59e0b; border:1px solid rgba(245,158,11,0.3); padding:0.25rem 0.75rem; border-radius:999px; font-size:0.875rem; font-weight:600; }
+
+    .vet-hero { text-align: center; padding: 5rem 0 3rem; min-height:75vh; display:flex; align-items:center; }
+    .vet-hero-inner { max-width:750px; margin:0 auto; }
+    .flag-banner { font-size: 3.5rem; margin-bottom: 1.5rem; }
+
+    .discount-box { display:inline-flex; gap:2rem; background:var(--color-card-bg); border:1px solid rgba(245,158,11,0.4); border-radius:var(--radius-lg); padding:2rem 3rem; margin:2rem 0; box-shadow:var(--shadow-glow); flex-wrap:wrap; justify-content:center; }
+    .discount-item { text-align:center; }
+    .discount-number { font-size:3rem; font-weight:800; font-family:var(--font-heading); color:#f59e0b; line-height:1; }
+    .discount-label { font-size:0.9rem; color:var(--color-text-muted); margin-top:0.25rem; }
+
+    .how-it-works { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin:3rem 0; }
+    .step-box { background:var(--color-card-bg); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:2rem; text-align:center; }
+    .step-num-vet { width:48px; height:48px; border-radius:50%; background:rgba(245,158,11,0.15); color:#f59e0b; font-family:var(--font-heading); font-weight:800; font-size:1.25rem; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; border:2px solid rgba(245,158,11,0.3); }
+    .step-box h3 { font-size:1.05rem; margin-bottom:0.5rem; }
+    .step-box p { font-size:0.9rem; margin:0; }
+
+    .verify-form { max-width:560px; margin:0 auto; background:var(--color-card-bg); border:1px solid rgba(245,158,11,0.3); border-radius:var(--radius-lg); padding:2.5rem; }
+    .verify-form h2 { font-size:1.75rem; margin-bottom:0.5rem; }
+    .verify-form p { margin-bottom:1.5rem; }
+    .verify-form input, .verify-form select {
+      width:100%; padding:0.75rem 1rem; background:rgba(0,0,0,0.2);
+      border:1px solid var(--color-border); border-radius:8px; color:white;
+      font-family:var(--font-body); margin-bottom:0.75rem; transition:var(--transition);
+    }
+    .verify-form input:focus, .verify-form select:focus { outline:none; border-color:#f59e0b; box-shadow:0 0 0 3px rgba(245,158,11,0.1); }
+    .verify-form select option { background:#1e293b; }
+
+    .testimonial-vet { background:rgba(180,83,9,0.08); border:1px solid rgba(245,158,11,0.2); border-radius:var(--radius-lg); padding:2rem; max-width:700px; margin:2rem auto; }
+    .feature-list { display:flex; flex-direction:column; gap:0.75rem; text-align:left; }
+    .feature-item { display:flex; align-items:flex-start; gap:0.75rem; font-size:0.95rem; color:var(--color-text-muted); }
+    .feature-item svg { color:#f59e0b; flex-shrink:0; margin-top:3px; }
+
+    .navbar { position:fixed; background:rgba(15,23,42,0.9); backdrop-filter:blur(12px); border-bottom:1px solid var(--color-border); }
+    .site-footer { background:rgba(0,0,0,0.4); border-top:1px solid var(--color-border); padding:3rem 0 2rem; }
+    .footer-bottom { border-top:1px solid var(--color-border); margin-top:2rem; padding-top:1.25rem; }
+    .footer-bottom p { font-size:0.85rem; color:var(--color-text-muted); margin:0; }
+
+    @media (max-width:992px) {
+      .how-it-works { grid-template-columns:1fr; }
+      .discount-box { gap:1rem; padding:1.5rem; }
+    }
+  </style>
+    <meta property="og:image" content="https://rankandring.io/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Rank &amp; Ring — More Calls. More Booked Jobs.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://rankandring.io/og-image.jpg">
+</head>
+<body>
+  <div class="bg-pattern"></div>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.21 12 19.79 19.79 0 0 1 1.14 3.38 2 2 0 0 1 3.12 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Rank<span>&</span>Ring
+        <span style="font-size:0.875rem; color:#f59e0b; font-weight:normal; margin-left:0.5rem; border-left:1px solid var(--color-border); padding-left:0.5rem;">🇺🇸 Veteran Program</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="vet-hero container" style="padding-top:120px;">
+    <div class="vet-hero-inner fade-in-up">
+      <div class="flag-banner">🇺🇸</div>
+      <span class="badge-vet" style="margin-bottom:1.5rem; display:inline-block;">Service Deserves Service</span>
+      <h1>You spent years <span class="text-accent">serving our country.</span><br/>Now let your business get the calls it deserves.</h1>
+      <p style="font-size:1.2rem; max-width:580px; margin:1rem auto 0;">Rank & Ring offers exclusive savings to honorably discharged veterans starting or growing a trade business. No hoops. No fine print. Just real savings — as a thank you.</p>
+
+      <div class="discount-box">
+        <div class="discount-item">
+          <div class="discount-number">25%</div>
+          <div class="discount-label">off any setup fee</div>
+        </div>
+        <div class="discount-item" style="border-left:1px solid rgba(245,158,11,0.2); padding-left:2rem;">
+          <div class="discount-number">3</div>
+          <div class="discount-label">months free (monthly plan)</div>
+        </div>
+        <div class="discount-item" style="border-left:1px solid rgba(245,158,11,0.2); padding-left:2rem;">
+          <div class="discount-number">5</div>
+          <div class="discount-label">day priority launch</div>
+        </div>
+      </div>
+
+      <a href="#vet-apply" class="btn btn-primary" style="font-size:1.15rem; padding:1rem 2.5rem;">🇺🇸 Claim My Veteran Discount →</a>
+      <p style="font-size:0.85rem; color:var(--color-text-muted); margin-top:1rem;">Verify with DD-214 or VA ID. Takes 60 seconds.</p>
+    </div>
+  </section>
+
+  <!-- WHO QUALIFIES -->
+  <section style="padding:4rem 0;" class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+      <div>
+        <h2>Who qualifies for the <span class="text-accent">Veteran Program?</span></h2>
+        <p>Any honorably discharged veteran of the U.S. Armed Forces who is:</p>
+        <div class="feature-list" style="margin:1.25rem 0;">
+          <div class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Starting a new trade business (HVAC, plumbing, electrical, roofing)</div>
+          <div class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Currently operating a trade business and looking to grow</div>
+          <div class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Transitioning from active duty into a trade career</div>
+        </div>
+        <p style="margin-bottom:0.5rem;">Spouses and surviving spouses of veterans who operate a qualifying trade business are also eligible.</p>
+        <p style="font-size:0.9rem; color:var(--color-text-muted);">Military experience that often maps to trade careers: Air Force 3E1X1 (HVAC), Army 12P / 12N (Plumbing/Electrical), Navy CE / EM, Marine Corps 1141 (Electrician).</p>
+      </div>
+      <div>
+        <div class="glass-card" style="border-top:4px solid #f59e0b;">
+          <h3 style="margin-bottom:1rem;">Savings at a Glance</h3>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <div style="display:flex; justify-content:space-between; padding:0.75rem; background:rgba(0,0,0,0.2); border-radius:8px; align-items:center;">
+              <span style="font-size:0.95rem;">Foundation Setup ($1,500)</span>
+              <span style="font-weight:800; color:#f59e0b; font-size:1.1rem;">You pay: $1,125</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:0.75rem; background:rgba(0,0,0,0.2); border-radius:8px; align-items:center;">
+              <span style="font-size:0.95rem;">Growth Setup ($3,000)</span>
+              <span style="font-weight:800; color:#f59e0b; font-size:1.1rem;">You pay: $2,250</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:0.75rem; background:rgba(0,0,0,0.2); border-radius:8px; align-items:center;">
+              <span style="font-size:0.95rem;">Pro Setup ($5,000)</span>
+              <span style="font-weight:800; color:#f59e0b; font-size:1.1rem;">You pay: $3,750</span>
+            </div>
+            <div style="background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.2); border-radius:8px; padding:0.75rem;">
+              <p style="margin:0; font-size:0.9rem; color:#f59e0b;"><strong>+ 3 months free</strong> on any monthly plan (Growth: $1,497 savings · Pro: $2,397 savings)</p>
+            </div>
+            <div style="background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.2); border-radius:8px; padding:0.75rem;">
+              <p style="margin:0; font-size:0.9rem; color:#f59e0b;"><strong>Priority launch:</strong> Your site goes live in 5 business days — not 7–21.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="padding:4rem 0; text-align:center;" class="container">
+    <h2>How to claim your <span class="text-accent">discount.</span></h2>
+    <p>Three steps. Takes less than 5 minutes total.</p>
+    <div class="how-it-works">
+      <div class="step-box">
+        <div class="step-num-vet">1</div>
+        <h3>Fill out the form below</h3>
+        <p>Tell us your name, trade, and contact info. Takes 60 seconds.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num-vet">2</div>
+        <h3>Verify with DD-214 or VA ID</h3>
+        <p>Upload or email a copy. We verify within 24 hours. It's a quick, respectful process.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num-vet">3</div>
+        <h3>Get your pricing locked in</h3>
+        <p>We'll schedule your strategy call with your veteran discount already applied — no haggling needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <div class="container">
+    <div class="testimonial-vet">
+      <div style="color:#f59e0b; font-size:1.1rem; letter-spacing:2px; margin-bottom:1rem;">★★★★★</div>
+      <p style="font-size:1.05rem; font-style:italic; margin-bottom:1rem;">"I spent 8 years as an Army combat engineer. When I got out, I started my own plumbing company. The veteran discount saved me over $2,000 upfront, and having an AI answer my calls while I'm on jobs has been a game-changer. I went from 3 new clients a month to 9."</p>
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <div style="width:44px; height:44px; border-radius:50%; background:rgba(245,158,11,0.2); display:flex; align-items:center; justify-content:center; font-weight:800; color:#f59e0b; font-family:var(--font-heading);">TR</div>
+        <div>
+          <div style="font-weight:700; font-size:0.95rem; color:white;">Terrance R.</div>
+          <div style="font-size:0.85rem; color:var(--color-text-muted);">Army Veteran · TR Plumbing Solutions · Decatur, GA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATION FORM -->
+  <section style="padding:4rem 0;" class="container" id="vet-apply">
+    <div class="verify-form">
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <div style="font-size:2.5rem; margin-bottom:0.5rem;">🇺🇸</div>
+        <h2>Claim My <span class="text-accent">Veteran Discount</span></h2>
+        <p>Fill this out and we'll reach out within 1 business day to verify and lock in your pricing.</p>
+      </div>
+      <input type="text" placeholder="Full Name" id="vetName" />
+      <input type="tel" placeholder="Phone Number" id="vetPhone" />
+      <input type="email" placeholder="Email Address" id="vetEmail" />
+      <select id="vetBranch">
+        <option value="" disabled selected>Branch of Service</option>
+        <option>Army</option>
+        <option>Navy</option>
+        <option>Air Force</option>
+        <option>Marine Corps</option>
+        <option>Coast Guard</option>
+        <option>Space Force</option>
+        <option>National Guard / Reserve</option>
+      </select>
+      <select id="vetTrade">
+        <option value="" disabled selected>Your Trade</option>
+        <option>HVAC / Air Conditioning</option>
+        <option>Plumbing</option>
+        <option>Electrical</option>
+        <option>Roofing</option>
+        <option>Other</option>
+      </select>
+      <select id="vetPackage">
+        <option value="" disabled selected>Package Interest</option>
+        <option>Foundation ($1,500 → $1,125 for veterans)</option>
+        <option>Growth ($3,000 → $2,250 + 3 months free)</option>
+        <option>Pro ($5,000 → $3,750 + 3 months free)</option>
+        <option>Not sure yet — tell me more</option>
+      </select>
+      <button onclick="submitVetForm()" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:0.5rem; font-size:1.05rem;">
+        🇺🇸 Submit My Veteran Application →
+      </button>
+      <p style="font-size:0.8rem; text-align:center; margin-top:0.75rem; margin-bottom:0; color:var(--color-text-muted);">We'll contact you within 1 business day to verify and confirm your discount. Thank you for your service.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <a href="index.html" class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:0.5rem;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.21 12 19.79 19.79 0 0 1 1.14 3.38 2 2 0 0 1 3.12 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Rank<span>&</span>Ring</a>
+        <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+          <a href="index.html" style="color:var(--color-text-muted); text-decoration:none; font-size:0.9rem;">Home</a>
+          <a href="quiz.html" style="color:var(--color-text-muted); text-decoration:none; font-size:0.9rem;">Get Blueprint</a>
+          <a href="graduates.html" style="color:var(--color-text-muted); text-decoration:none; font-size:0.9rem;">Graduate Program</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Rank & Ring LLC · hello@rankandring.io · Atlanta, GA · 🇺🇸 Proudly serving those who served</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function submitVetForm() {
+      const name = document.getElementById('vetName').value;
+      const phone = document.getElementById('vetPhone').value;
+      const email = document.getElementById('vetEmail').value;
+      const branch = document.getElementById('vetBranch').value;
+      const trade = document.getElementById('vetTrade').value;
+      if (!name || !phone || !email || !branch || !trade) { alert('Please fill out all fields so we can verify your eligibility.'); return; }
+      // TODO: POST to /api/veteran-application or Zapier webhook
+      window.location.href = `thankyou.html?name=${encodeURIComponent(name)}&type=veteran`;
+    }
+  </script>
+</body>
+</html>

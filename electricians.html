@@ -1,183 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Dispatcher for Electricians | Book More Panel & EV Charger Jobs | Rank & Ring</title>
-    <meta name="description"
-        content="Electricians: stop missing high-value jobs. Rank & Ring's AI dispatcher answers calls and books panel upgrades and EV charger installs 24/7—even when your hands are full.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Override global background pattern for an Electrical theme */
-        .bg-pattern {
-            background:
-                radial-gradient(circle at 15% 50%, rgba(234, 179, 8, 0.15), transparent 30%),
-                /* Yellow for electricity */
-                radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.15), transparent 30%);
-            /* Orange/Amber */
-        }
-
-        .text-accent {
-            color: #eab308;
-            /* Bright Yellow */
-        }
-
-        .btn-primary {
-            background-color: #eab308;
-            box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
-            color: #000;
-        }
-
-        .btn-primary:hover {
-            background-color: #ca8a04;
-            box-shadow: 0 0 30px rgba(234, 179, 8, 0.5);
-        }
-    </style>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electricians | Rank & Ring | Atlanta Reputation & Lead System</title>
+  <meta name="description" content="Rank & Ring helps Atlanta electricians get more Google reviews, win high-ticket panel and EV charger jobs, and build the trust signals homeowners need before they call.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar{position:fixed;background:rgba(15,23,42,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-border);padding:1rem 0;top:0;left:0;right:0;z-index:100}
+    .nav-links{display:flex;gap:1.75rem;align-items:center}
+    .nav-links a{color:var(--color-text-muted);text-decoration:none;font-size:.95rem;font-weight:500;font-family:var(--font-heading);transition:var(--transition)}
+    .nav-links a:hover{color:white}
+    .nav-cta{background:var(--color-accent)!important;color:#000!important;padding:.5rem 1.25rem;border-radius:var(--radius);font-weight:700!important}
+    @media(max-width:768px){.nav-links{display:none}}
+    .text-elec{color:#fbbf24}
+    .hero{min-height:90vh;display:flex;align-items:center;padding-top:80px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);color:#fbbf24;border-radius:999px;padding:.35rem 1rem;font-size:.85rem;font-weight:700;margin-bottom:1.5rem}
+    .section-tag{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fbbf24;margin-bottom:.75rem}
+    .section-title{font-size:clamp(1.75rem,3.5vw,2.5rem);margin-bottom:.75rem}
+    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+    .pain-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.75rem}
+    .pain-number{font-size:2.5rem;font-weight:800;color:#fbbf24;font-family:var(--font-heading);line-height:1;margin-bottom:.75rem}
+    .pain-card h3{font-size:1rem;margin-bottom:.5rem;color:white}
+    .pain-card p{font-size:.9rem;color:var(--color-text-muted);margin:0}
+    .pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
+    .pillar-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.75rem;transition:var(--transition)}
+    .pillar-card:hover{border-color:rgba(251,191,36,.35);transform:translateY(-4px)}
+    .pillar-icon{font-size:2rem;margin-bottom:1rem}
+    .pillar-name{font-size:1.05rem;font-weight:700;color:white;margin-bottom:.5rem;font-family:var(--font-heading)}
+    .pillar-desc{font-size:.9rem;color:var(--color-text-muted);margin:0;line-height:1.6}
+    .pillar-badge{display:inline-block;font-size:.75rem;font-weight:700;background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.2);border-radius:999px;padding:.2rem .7rem;margin-top:.75rem}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+    .price-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2rem;display:flex;flex-direction:column;position:relative}
+    .price-card.featured{border-color:#fbbf24;box-shadow:0 0 20px rgba(251,191,36,.2)}
+    .featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#fbbf24;color:#000;font-size:.75rem;font-weight:800;padding:.25rem 1rem;border-radius:999px;white-space:nowrap;font-family:var(--font-heading)}
+    .price-name{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted);margin-bottom:.75rem}
+    .price-amount{font-size:2.5rem;font-weight:800;font-family:var(--font-heading);color:white;line-height:1}
+    .price-period{font-size:.9rem;color:var(--color-text-muted);margin-bottom:.25rem}
+    .price-note{font-size:.85rem;color:#fbbf24;font-weight:600;margin-bottom:1.5rem}
+    .price-divider{border:none;border-top:1px solid var(--color-border);margin:1.25rem 0}
+    .price-feature{display:flex;align-items:flex-start;gap:.6rem;font-size:.9rem;color:var(--color-text-muted);margin-bottom:.6rem}
+    .price-feature .chk{color:#fbbf24;flex-shrink:0;margin-top:2px;font-weight:700}
+    .price-feature.off{opacity:.35}
+    .price-cta{margin-top:auto;padding-top:1.5rem}
+    .btn-elec{background:#fbbf24;color:#000;box-shadow:0 0 20px rgba(251,191,36,.25)}
+    .btn-elec:hover{background:#f59e0b}
+    @media(max-width:768px){.pain-grid,.pillars-grid,.pricing-grid{grid-template-columns:1fr}}
+    footer{border-top:1px solid var(--color-border);padding:3rem 0;margin-top:4rem;background:rgba(15,23,42,.5)}
+    .footer-bottom{text-align:center;font-size:.8rem;color:var(--color-text-muted);margin-top:2rem;padding-top:1rem;border-top:1px solid var(--color-border)}
+  </style>
 </head>
-
 <body>
-    <div class="bg-pattern"></div>
+<div class="bg-pattern" style="background:radial-gradient(circle at 20% 50%,rgba(251,191,36,.12),transparent 30%),radial-gradient(circle at 80% 30%,rgba(14,165,233,.1),transparent 30%)"></div>
+<nav class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">Rank<span>&</span>Ring</a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How It Works</a><a href="hvac.html">HVAC</a><a href="plumbers.html">Plumbers</a><a href="electricians.html" style="color:white">Electricians</a><a href="index.html#pricing">Pricing</a><a href="analysis.html" class="nav-cta">Free Analysis</a>
+    </div>
+  </div>
+</nav>
 
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                    </path>
-                </svg>
-                Rank<span>&</span>Ring <span
-                    style="font-size: 0.875rem; color: #eab308; font-weight: normal; margin-left: 0.5rem; border-left: 1px solid var(--color-border); padding-left: 0.5rem;">For
-                    Electricians</span>
-            </a>
-            <div class="nav-links">
-                <a href="index.html#calculator" class="btn btn-secondary"
-                    style="padding: 0.5rem 1rem; font-size: 0.875rem;">ROI Calculator</a>
-            </div>
-        </div>
-    </nav>
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">⚡ Built for Electricians</div>
+    <h1>Homeowners are looking for a licensed electrician they can trust.<br><span class="text-elec">Make sure they find you before they find someone else.</span></h1>
+    <p style="font-size:1.15rem;color:var(--color-text-muted);max-width:620px;margin-bottom:2rem">Panel upgrades, EV charger installs, safety inspections — high-ticket jobs go to the electrician with the most trust signals. We build those signals and make sure the right calls reach you first.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="analysis.html" class="btn btn-elec">Get My Free Electrical Business Analysis →</a>
+      <a href="index.html#pricing" class="btn btn-secondary">See Pricing</a>
+    </div>
+  </div>
+</section>
 
-    <section class="hero container" style="min-height: 80vh;">
-        <div class="hero-grid">
-            <div class="hero-content fade-in-up">
-                <span class="badge"
-                    style="margin-bottom: 1rem; display: inline-block; background: rgba(234, 179, 8, 0.1); color: #eab308; border-color: rgba(234, 179, 8, 0.2);">Electrical
-                    Exclusive System</span>
-                <h1>Your competitor just booked the panel upgrade you missed because <span class="text-accent">you were
-                        on a job site.</span></h1>
-                <p>High-value jobs like panel replacements and EV charger installs go to the electrician who answers
-                    first. A Virtual Dispatcher qualifies and books them immediately while your hands are full.</p>
+<section style="padding:5rem 0">
+  <div class="container">
+    <div class="section-tag">Where Electricians Lose Jobs</div>
+    <h2 class="section-title">Three things working against you right now.</h2>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pain-number">$6K+</div><h3>The panel job that went to someone else</h3><p>Panel replacements and EV charger installs are high-trust, high-ticket decisions. Homeowners spend 20 minutes researching before they call. If your profile doesn't have a license number, solid reviews, and a professional site, they call the next electrician down the list.</p></div>
+      <div class="pain-card"><div class="pain-number">Lic #</div><h3>License not visible anywhere online</h3><p>Georgia homeowners know they need a licensed electrician for permit work. If your license number isn't on your website, your Google profile, and your directory listings, you're losing trust before the first call — to someone who does show it.</p></div>
+      <div class="pain-card"><div class="pain-number">EV</div><h3>Missing the EV charger wave</h3><p>EV charger installs are the fastest-growing residential electrical job in Atlanta. Homeowners are searching right now. If your Google Business Profile doesn't list it as a service and your content doesn't mention it, you're invisible to this entire category of customer.</p></div>
+    </div>
+  </div>
+</section>
 
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                    <a href="quiz.html" class="btn btn-primary">See Your Missed Revenue Potential</a>
-                    <a href="#" class="btn btn-secondary" onclick="alert('Demo video coming soon!')">Watch a 2-minute
-                        demo</a>
-                </div>
+<section style="padding:5rem 0;background:linear-gradient(to bottom,transparent,rgba(15,23,42,.6),transparent)">
+  <div class="container">
+    <div class="section-tag">What's Included</div>
+    <h2 class="section-title">Five things running for your electrical business at once.</h2>
+    <div class="pillars-grid">
+      <div class="pillar-card"><div class="pillar-icon">⭐</div><div class="pillar-name">Reputation & Ratings</div><p class="pillar-desc">Review generation after every job. License number prominently displayed on Google, Yelp, and your website. Unclaimed listings cleaned up and verified. Trust signals that make homeowners comfortable calling before they've ever met you.</p><div class="pillar-badge">All plans</div></div>
+      <div class="pillar-card"><div class="pillar-icon">📞</div><div class="pillar-name">Call Triage & Dispatch</div><p class="pillar-desc">Sparking outlets, no power, breaker failures — those trigger immediate alerts to your designated contact. Panel quotes and EV charger consults book to your calendar for the next available slot.</p><div class="pillar-badge">Growth + Pro</div></div>
+      <div class="pillar-card"><div class="pillar-icon">🌐</div><div class="pillar-name">Electrician Website</div><p class="pillar-desc">Mobile-first site with license number, insurance verification, service list, permit work disclosure, and service area pages optimized for your target ZIPs. Built to convert the high-intent homeowner who's already decided they want a pro.</p><div class="pillar-badge">All plans</div></div>
+      <div class="pillar-card"><div class="pillar-icon">✍️</div><div class="pillar-name">Content That Builds Trust</div><p class="pillar-desc">EV charger explainers, panel upgrade guides, safety inspection checklists — posted in your voice on Nextdoor and social. Content that positions you as the expert before anyone needs to search for one.</p><div class="pillar-badge">Growth + Pro</div></div>
+    </div>
+  </div>
+</section>
 
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <div
-                        style="width: 40px; height: 40px; background: rgba(234, 179, 8, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #eab308;">
-                        MS</div>
-                    <div>
-                        <p style="margin: 0; font-size: 0.875rem; color: white; font-style: italic;">"Booked two EV
-                            charger installs while I was doing a rough-in across town."</p>
-                        <span style="font-size: 0.75rem; color: var(--color-text-muted);">— Mark S., Master
-                            Electrician</span>
-                    </div>
-                </div>
-            </div>
+<section style="padding:5rem 0" id="pricing">
+  <div class="container text-center">
+    <div class="section-tag">Pricing</div>
+    <h2 class="section-title">No setup fees. No surprises.</h2>
+    <p style="color:var(--color-text-muted);max-width:480px;margin:0 auto">Free Business Health Analysis with every plan. See your numbers before we start billing.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Essential</div><div class="price-amount">$799</div><div class="price-period">/month</div><div class="price-note">No setup fee · Cancel anytime</div>
+        <hr class="price-divider">
+        <div class="price-feature"><span class="chk">✓</span>Free Business Health Analysis</div>
+        <div class="price-feature"><span class="chk">✓</span>Google Business Profile + license display</div>
+        <div class="price-feature"><span class="chk">✓</span>Review generation system</div>
+        <div class="price-feature"><span class="chk">✓</span>3 listing cleanups with license verification</div>
+        <div class="price-feature"><span class="chk">✓</span>5-page professional website</div>
+        <div class="price-feature off"><span class="chk">—</span>Emergency call triage</div>
+        <div class="price-feature off"><span class="chk">—</span>Content engine</div>
+        <div class="price-cta"><a href="analysis.html" class="btn btn-secondary" style="width:100%;font-size:1rem">Get Started →</a></div>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-badge">⚡ Most Popular</div>
+        <div class="price-name">Growth</div><div class="price-amount">$1,299</div><div class="price-period">/month</div><div class="price-note">No setup fee · Cancel anytime</div>
+        <hr class="price-divider">
+        <div class="price-feature"><span class="chk">✓</span>Everything in Essential</div>
+        <div class="price-feature"><span class="chk">✓</span>24/7 emergency call triage</div>
+        <div class="price-feature"><span class="chk">✓</span>Immediate alerts for safety emergencies</div>
+        <div class="price-feature"><span class="chk">✓</span>Panel &amp; EV consult calendar booking</div>
+        <div class="price-feature"><span class="chk">✓</span>4 Nextdoor + social posts/month</div>
+        <div class="price-feature"><span class="chk">✓</span>Monthly report + 30-min review call</div>
+        <div class="price-cta"><a href="analysis.html" class="btn btn-elec" style="width:100%;font-size:1rem">Claim Growth Plan →</a></div>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Pro</div><div class="price-amount">$1,999</div><div class="price-period">/month</div><div class="price-note">No setup fee · Cancel anytime</div>
+        <hr class="price-divider">
+        <div class="price-feature"><span class="chk">✓</span>Everything in Growth</div>
+        <div class="price-feature"><span class="chk">✓</span>8 posts/month all platforms</div>
+        <div class="price-feature"><span class="chk">✓</span>Monthly 1:1 strategy call</div>
+        <div class="price-feature"><span class="chk">✓</span>Competitor tracking</div>
+        <div class="price-feature"><span class="chk">✓</span>Reputation crisis response</div>
+        <div class="price-feature"><span class="chk">✓</span>Veteran &amp; graduate discounts</div>
+        <div class="price-cta"><a href="analysis.html" class="btn btn-secondary" style="width:100%;font-size:1rem">Get Started →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Visual Representation of the AI Receptionist - Electrical Context -->
-            <div class="hero-visual fade-in-up delay-1">
-                <div class="glass-card" style="border-top: 4px solid #eab308;">
-                    <div
-                        style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; margin-bottom: 1rem;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <div style="width: 10px; height: 10px; background: #22c55e; border-radius: 50%;"></div>
-                            <strong>AI Dispatcher: Active</strong>
-                        </div>
-                        <span style="color: var(--color-text-muted); font-size: 0.875rem;">Tuesday, 7:30 PM</span>
-                    </div>
+<section style="padding:4rem 0">
+  <div class="container text-center">
+    <h2 style="font-size:clamp(1.75rem,3vw,2.25rem);margin-bottom:1rem">See what's keeping homeowners from calling you — free.</h2>
+    <p style="color:var(--color-text-muted);max-width:500px;margin:0 auto 2rem">15 minutes. We show you your Google ranking, your trust signal gaps, and your competitor's profile side by side. No pitch until you ask.</p>
+    <a href="analysis.html" class="btn btn-elec">Get My Free Electrical Analysis →</a>
+  </div>
+</section>
 
-                    <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <p style="margin: 0; font-size: 0.875rem;"><em>Incoming SMS from Lead:</em><br />
-                            <span style="color: white; font-weight: 500;">"Half the power in my house just went out and
-                                I smell something burning near the breaker box."</span>
-                        </p>
-                    </div>
-
-                    <div
-                        style="background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.2); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <p style="margin: 0; font-size: 0.875rem; color: #eab308;"><strong
-                                style="color: white;">Dispatcher:</strong><br />
-                            "Shut off your main breaker immediately. This is an after-hours emergency ($195 call-out
-                            fee). I have a licensed tech who can be there in 45 mins. Reply 'YES' to dispatch them."</p>
-                    </div>
-
-                    <div
-                        style="display: flex; gap: 0.5rem; align-items: center; justify-content: center; background: rgba(234, 179, 8, 0.1); color: #eab308; padding: 0.75rem; border-radius: 8px; font-weight: bold; border: 1px solid rgba(234, 179, 8, 0.3);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                        </svg>
-                        $3,200 Panel Upgrade Secured
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Global Footer -->
-    <footer
-        style="border-top: 1px solid var(--color-border); padding: 3rem 0; margin-top: 4rem; background: rgba(15, 23, 42, 0.5);">
-        <div class="container"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
-            <div>
-                <a href="index.html" class="logo" style="margin-bottom: 1rem;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        style="color: var(--color-accent);">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                        </path>
-                    </svg>
-                    Rank<span>&</span>Ring
-                </a>
-                <p style="font-size: 0.875rem;">AI-powered dispatching and local SEO for independent contractors.</p>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 1rem;">Trades</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 0.5rem;"><a href="hvac.html"
-                            style="color: var(--color-text-muted); text-decoration: none;">HVAC Pros</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="plumbers.html"
-                            style="color: var(--color-text-muted); text-decoration: none;">Plumbers</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="electricians.html"
-                            style="color: var(--color-text-muted); text-decoration: none;">Electricians</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 1rem;">Contact</h4>
-                <p style="font-size: 0.875rem; margin-bottom: 0.5rem;">123 Business Pkwy, Suite 100<br>Atlanta, GA 30301
-                </p>
-                <p style="font-size: 0.875rem; margin-bottom: 0.5rem;"><a href="mailto:hello@rankandring.io"
-                        style="color: var(--color-accent); text-decoration: none;">hello@rankandring.io</a></p>
-                <p style="font-size: 0.875rem;"><a href="tel:+15551234567"
-                        style="color: var(--color-text-muted); text-decoration: none;">(555) 123-4567</a></p>
-            </div>
-        </div>
-        <div class="container"
-            style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.75rem; color: var(--color-text-muted);">
-            &copy; 2026 Rank & Ring. All rights reserved.
-        </div>
-    </footer>
+<footer>
+  <div class="container" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem">
+    <div><a href="index.html" class="logo">Rank<span>&</span>Ring</a><p style="font-size:.9rem;color:var(--color-text-muted);margin-top:.75rem;max-width:260px">Complete business protection for trade contractors in Atlanta.</p></div>
+    <div><h4 style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:1rem">Trades</h4><a href="hvac.html" style="display:block;color:var(--color-text-muted);text-decoration:none;margin-bottom:.5rem">HVAC Contractors</a><a href="plumbers.html" style="display:block;color:var(--color-text-muted);text-decoration:none;margin-bottom:.5rem">Plumbers</a><a href="electricians.html" style="display:block;color:var(--color-text-muted);text-decoration:none">Electricians</a></div>
+    <div><h4 style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:1rem">Get Started</h4><a href="analysis.html" style="display:block;color:var(--color-text-muted);text-decoration:none;margin-bottom:.5rem">Free Analysis</a><a href="book.html" style="display:block;color:var(--color-text-muted);text-decoration:none;margin-bottom:.5rem">Book a Call</a><a href="mailto:hello@rankandring.io" style="display:block;color:var(--color-accent);text-decoration:none">hello@rankandring.io</a></div>
+  </div>
+  <div class="footer-bottom">© 2026 Rank & Ring. All rights reserved. · Atlanta, GA</div>
+</footer>
 </body>
-
 </html>

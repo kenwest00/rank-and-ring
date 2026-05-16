@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Business Analysis | Rank & Ring</title>
+  <meta name="description" content="Get a free 15-minute business health analysis for your HVAC, plumbing, or electrical contracting business. See exactly where you stand before you spend a dollar.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar{position:fixed;background:rgba(15,23,42,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-border);padding:1rem 0;top:0;left:0;right:0;z-index:100}
+    .nav-links{display:flex;gap:1.75rem;align-items:center}
+    .nav-links a{color:var(--color-text-muted);text-decoration:none;font-size:.95rem;font-weight:500;font-family:var(--font-heading);transition:var(--transition)}
+    .nav-links a:hover{color:white}
+    @media(max-width:768px){.nav-links{display:none}}
+    .page-wrap{padding-top:100px;padding-bottom:5rem;min-height:100vh}
+    .page-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto;padding:0 2rem}
+    .left-col h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:1rem}
+    .left-col p{font-size:1.05rem;color:var(--color-text-muted);margin-bottom:1.5rem}
+    .analysis-points{list-style:none;padding:0;margin:0 0 2rem}
+    .analysis-points li{display:flex;align-items:flex-start;gap:.85rem;font-size:.95rem;color:var(--color-text-muted);padding:.85rem 0;border-bottom:1px solid var(--color-border)}
+    .analysis-points li:last-child{border-bottom:none}
+    .point-icon{font-size:1.5rem;flex-shrink:0;margin-top:-.1rem}
+    .point-body strong{display:block;color:white;font-weight:700;font-family:var(--font-heading);margin-bottom:.2rem}
+    .trust-line{font-size:.9rem;color:var(--color-text-muted);font-style:italic;border-left:3px solid rgba(245,158,11,.4);padding-left:1rem}
+    .form-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2.5rem;position:sticky;top:100px}
+    .form-card h2{font-size:1.5rem;margin-bottom:.4rem}
+    .form-card p{font-size:.9rem;color:var(--color-text-muted);margin-bottom:1.5rem}
+    .form-group{margin-bottom:1rem}
+    .form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--color-text-muted);margin-bottom:.4rem;font-family:var(--font-heading)}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:.75rem 1rem;background:rgba(0,0,0,.2);border:1px solid var(--color-border);border-radius:var(--radius);color:white;font-family:var(--font-body);font-size:.95rem;transition:var(--transition)}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(245,158,11,.1)}
+    .form-group select option{background:#1e293b}
+    .form-group textarea{height:90px;resize:none}
+    .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .form-note{font-size:.8rem;color:var(--color-text-muted);text-align:center;margin-top:.85rem;margin-bottom:0}
+    .what-next{margin-top:2.5rem}
+    .what-next h3{font-size:1.1rem;margin-bottom:1rem;color:white}
+    .next-step{display:flex;gap:.85rem;margin-bottom:1rem;font-size:.9rem;color:var(--color-text-muted)}
+    .next-num{width:28px;height:28px;border-radius:50%;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--color-accent);font-family:var(--font-heading);font-size:.8rem;flex-shrink:0}
+    @media(max-width:840px){.page-inner{grid-template-columns:1fr}.form-card{position:static}}
+    footer{border-top:1px solid var(--color-border);padding:2rem 0;background:rgba(15,23,42,.5)}
+    .footer-bottom{text-align:center;font-size:.8rem;color:var(--color-text-muted)}
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<nav class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">Rank<span>&</span>Ring</a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How It Works</a><a href="index.html#pricing">Pricing</a><a href="veterans.html">Veterans</a><a href="graduates.html">Graduates</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-inner">
+    <div class="left-col">
+      <div style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--color-accent);border-radius:999px;padding:.35rem 1rem;font-size:.85rem;font-weight:700;margin-bottom:1.25rem">🔍 Free · 15 minutes · No commitment</div>
+      <h1>See exactly where your business stands — before you spend anything.</h1>
+      <p>We analyze your Google rating, your unclaimed listings, your local search ranking, your competitor gap, and your missed call estimate. You get a plain-English report on a 15-minute call with Ken. Free. No pitch until you ask what it costs.</p>
+      <ul class="analysis-points">
+        <li><div class="point-icon">⭐</div><div class="point-body"><strong>Your Google rating vs. competitors</strong>Where you rank relative to the top 3 in your market, and how many reviews it takes to close the gap.</div></li>
+        <li><div class="point-icon">📋</div><div class="point-body"><strong>Unclaimed listings hurting you</strong>Yelp, Angi, BBB, HomeAdvisor — directories with your name on them that you don't control. We find every one.</div></li>
+        <li><div class="point-icon">🔍</div><div class="point-body"><strong>Local search ranking</strong>Where you actually appear when someone in your ZIP searches for your service right now — not where you think you appear.</div></li>
+        <li><div class="point-icon">📞</div><div class="point-body"><strong>Estimated missed call revenue</strong>Based on your call volume, close rate, and average ticket, we estimate what the missed calls are costing you per month.</div></li>
+        <li><div class="point-icon">🌐</div><div class="point-body"><strong>Website audit</strong>Mobile speed, lead capture, trust signals, and local SEO basics — the things homeowners check in 8 seconds before they decide to call.</div></li>
+      </ul>
+      <p class="trust-line">We review your profile before we call — not after. When you pick up the phone, we already know your business.</p>
+
+      <div class="what-next">
+        <h3>What happens after you submit</h3>
+        <div class="next-step"><div class="next-num">1</div><div>You'll get a confirmation text within 5 minutes. Ken reviews your profile before the call — so the 15 minutes is all signal, no small talk.</div></div>
+        <div class="next-step"><div class="next-num">2</div><div>Ken calls or texts you to schedule a 15-minute Zoom at a time that works for you. Usually same day or next morning.</div></div>
+        <div class="next-step"><div class="next-num">3</div><div>On the call, you see your numbers live — your rating, your competitor's, your unclaimed listings, your rank. Then you decide if it's worth fixing.</div></div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h2>Get my free business analysis</h2>
+      <p>You'll hear from Ken within 60 minutes. We review your profile before we call.</p>
+      <form action="thankyou.html" method="get">
+        <div class="form-row-2">
+          <div class="form-group"><label>First name</label><input type="text" name="name" placeholder="Marcus" required></div>
+          <div class="form-group"><label>Last name</label><input type="text" placeholder="Thompson" required></div>
+        </div>
+        <div class="form-group"><label>Business name</label><input type="text" placeholder="Premier HVAC Atlanta" required></div>
+        <div class="form-row-2">
+          <div class="form-group"><label>Your trade</label><select required><option value="" disabled selected>Select trade</option><option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>Other</option></select></div>
+          <div class="form-group"><label>Your city</label><input type="text" placeholder="Decatur"></div>
+        </div>
+        <div class="form-group"><label>Best phone number</label><input type="tel" placeholder="(404) 555-0123" required></div>
+        <div class="form-group"><label>Google Business Profile URL <span style="font-weight:400;color:#556">(optional but helpful)</span></label><input type="url" placeholder="https://g.co/..."></div>
+        <div class="form-group"><label>Who do you consider your main competitor? <span style="font-weight:400;color:#556">(optional)</span></label><input type="text" placeholder="Atlanta Climate Pros"></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;font-size:1.05rem;margin-top:.5rem">Get My Free Analysis →</button>
+      </form>
+      <p class="form-note">No credit card. No contract. No sales pressure until you ask what it costs.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container"><div class="footer-bottom">© 2026 Rank & Ring · <a href="index.html" style="color:var(--color-accent);text-decoration:none">Home</a> · <a href="mailto:hello@rankandring.io" style="color:var(--color-accent);text-decoration:none">hello@rankandring.io</a></div></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile Analysis | Rank & Ring</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{display:flex;flex-direction:column;min-height:100vh}
+    .wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center}
+    .inner{max-width:560px;width:100%}
+    .greeting{font-size:.9rem;color:var(--color-text-muted);margin-bottom:.4rem}
+    .inner h1{font-size:clamp(1.75rem,4vw,2.5rem);line-height:1.15;margin-bottom:.5rem}
+    .subtitle{font-size:1rem;color:var(--color-text-muted);margin-bottom:2.5rem}
+    .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin-bottom:2rem}
+    .stat-box{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.25rem 1rem}
+    .stat-box.warn{border-color:rgba(248,113,113,.35)}
+    .stat-box.compare{border-color:rgba(74,222,128,.2)}
+    .stat-label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--color-text-muted);margin-bottom:.4rem}
+    .stat-val{font-size:1.75rem;font-weight:800;font-family:var(--font-heading);line-height:1;margin-bottom:.2rem}
+    .stat-val.red{color:#f87171}
+    .stat-val.green{color:#4ade80}
+    .stat-val.amber{color:var(--color-accent)}
+    .stat-detail{font-size:.78rem;color:var(--color-text-muted)}
+    .gap-bar{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-bottom:2rem;text-align:left}
+    .gap-bar p{font-size:.95rem;color:var(--color-text-muted);margin:0;line-height:1.6}
+    .gap-bar strong{color:white}
+    .cta-block{margin-bottom:1.5rem}
+    .sub-note{font-size:.85rem;color:var(--color-text-muted);margin-bottom:2rem}
+    .sig{font-size:.85rem;color:var(--color-text-muted);border-top:1px solid var(--color-border);padding-top:1.5rem}
+    .sig a{color:var(--color-accent);text-decoration:none}
+    footer{border-top:1px solid var(--color-border);padding:1.25rem 0;background:rgba(15,23,42,.5)}
+    .footer-bottom{text-align:center;font-size:.8rem;color:var(--color-text-muted)}
+    @media(max-width:480px){.stats-row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+
+<div class="wrap">
+  <div class="inner">
+    <p class="greeting" id="greeting">From Ken West · Rank & Ring</p>
+    <h1 id="headline">Here's what we found on your business.</h1>
+    <p class="subtitle" id="subtitle">We pulled your profile before this call. Here's what the numbers look like right now.</p>
+
+    <div class="stats-row">
+      <div class="stat-box warn">
+        <div class="stat-label">Your rating</div>
+        <div class="stat-val amber" id="your-rating">—</div>
+        <div class="stat-detail" id="your-reviews">— Google reviews</div>
+      </div>
+      <div class="stat-box compare">
+        <div class="stat-label" id="comp-label">Top competitor</div>
+        <div class="stat-val green" id="comp-rating">—</div>
+        <div class="stat-detail" id="comp-reviews">— reviews</div>
+      </div>
+      <div class="stat-box warn">
+        <div class="stat-label">Est. monthly gap</div>
+        <div class="stat-val red" id="gap-jobs">—</div>
+        <div class="stat-detail">jobs/month to competitor</div>
+      </div>
+    </div>
+
+    <div class="gap-bar">
+      <p id="gap-message">The gap between your rating and theirs is costing you jobs you never even find out about — because those homeowners never call. They make their decision before they pick up the phone.</p>
+    </div>
+
+    <div class="cta-block">
+      <a href="book.html" id="cta-link" class="btn btn-primary" style="font-size:1.05rem;width:100%">Book my free 15-minute analysis →</a>
+    </div>
+    <p class="sub-note">No cost. No commitment. 15 minutes and you'll know exactly what it would take to close this gap.</p>
+
+    <div class="sig">
+      Ken West · Rank & Ring<br>
+      <a href="tel:+14045550123">(404) 555-0123</a> · <a href="mailto:hello@rankandring.io">hello@rankandring.io</a> · <a href="https://rankandring.io">rankandring.io</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container"><div class="footer-bottom"><a href="index.html" style="color:var(--color-accent);text-decoration:none">Rank & Ring</a> · © 2026</div></div>
+</footer>
+
+<script>
+const p = new URLSearchParams(window.location.search);
+const name = p.get('name') || '';
+const city = p.get('city') || '';
+const rating = parseFloat(p.get('rating')) || 0;
+const reviews = parseInt(p.get('reviews')) || 0;
+const comp = p.get('competitor') || '';
+const compRating = parseFloat(p.get('competitor_rating')) || 0;
+const compReviews = parseInt(p.get('competitor_reviews')) || 0;
+
+if (name) {
+  document.getElementById('greeting').textContent = 'Hey ' + name + ' — from Ken West · Rank & Ring';
+  document.getElementById('headline').textContent = 'Here\'s what we found on your business' + (city ? ' in ' + city : '') + '.';
+}
+
+if (rating) document.getElementById('your-rating').textContent = rating.toFixed(1) + '★';
+if (reviews) document.getElementById('your-reviews').textContent = reviews + ' Google reviews';
+
+if (comp) document.getElementById('comp-label').textContent = comp;
+if (compRating) document.getElementById('comp-rating').textContent = compRating.toFixed(1) + '★';
+if (compReviews) document.getElementById('comp-reviews').textContent = compReviews + ' reviews';
+
+if (rating && compRating) {
+  const diff = (compRating - rating).toFixed(1);
+  const estJobs = Math.max(2, Math.round((compRating - rating) * 4));
+  document.getElementById('gap-jobs').textContent = '~' + estJobs;
+  document.getElementById('gap-message').innerHTML =
+    'That <strong>' + diff + '-star gap</strong> between you and ' + (comp || 'your top competitor') + ' is costing you an estimated <strong>' + estJobs + ' jobs per month</strong> — jobs you never find out about because homeowners make their decision before they ever pick up the phone. The gap is closeable. It\'s not about doing better work. It\'s about making your existing reputation visible.';
+}
+
+// Pre-fill book link with params
+const bookLink = 'book.html?name=' + encodeURIComponent(name) + '&city=' + encodeURIComponent(city) + '&rating=' + rating;
+document.getElementById('cta-link').href = bookLink;
+</script>
+</body>
+</html>
