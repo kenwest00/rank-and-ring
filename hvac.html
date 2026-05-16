@@ -35,6 +35,11 @@
     .msg.inbound .msg-label{color:var(--color-text-muted)}
     .msg.outbound .msg-label{color:#f87171}
     .result-bar{display:flex;align-items:center;justify-content:center;gap:.75rem;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);padding:.85rem 1.25rem;border-radius:var(--radius);font-weight:700;color:#4ade80;font-size:.95rem;margin-top:.5rem}
+    .demo-label{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--color-accent);border-radius:999px;padding:.3rem .9rem;font-size:.8rem;font-weight:700;margin-bottom:1.25rem}
+    .demo-try{background:rgba(0,0,0,.2);border:1px solid rgba(245,158,11,.2);border-radius:var(--radius-lg);padding:2rem;max-width:600px;margin:2rem auto 0;text-align:center}
+    .demo-try h4{font-size:1rem;font-weight:700;color:white;margin-bottom:.4rem;font-family:var(--font-heading)}
+    .demo-try p{font-size:.875rem;color:var(--color-text-muted);margin-bottom:1.25rem}
+    #elevenlabs-widget{display:flex;justify-content:center}
     .pillars-section{padding:5rem 0}
     .pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
     .pillar-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.75rem;transition:var(--transition)}
@@ -134,9 +139,35 @@
       <div class="msg outbound"><div class="msg-label">Dispatcher Response — 8 seconds</div>"I can help right now. We have an emergency dispatch available this afternoon — a tech can be there between 3:30 and 5:00 PM. Reply YES to confirm. There is a $129 emergency dispatch fee."</div>
       <div class="msg inbound"><div class="msg-label">Customer</div>"YES please"</div>
       <div class="result-bar">📱 You receive a text: "Emergency booked — [Name], [Address], AC failure, 3:30–5pm. Call if you need details." → $4,500 system replacement captured.</div>
+      <div class="demo-try">
+        <div class="demo-label">🎙 Live Demo — try it yourself</div>
+        <h4>Hear the AI dispatcher handle a real emergency call.</h4>
+        <p>Click the mic and speak as a homeowner. This is exactly what your customers hear when they call your number after hours.</p>
+        <div id="elevenlabs-widget"></div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- ElevenLabs Voice Demo Widget -->
+<script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+<script>
+  const AGENT_ID = "YOUR_AGENT_ID";
+  const FIRST_MESSAGE = "Hey, yeah — I found you guys on Google. My AC just stopped blowing cold air and it's 95 degrees out. I have a newborn in the house. Are you guys doing emergency calls today?";
+  window.addEventListener('load', function() {
+    const widget = document.createElement('div');
+    widget.id = 'elevenlabs-convai';
+    widget.setAttribute('data-agent-id', AGENT_ID);
+    document.getElementById('elevenlabs-widget').appendChild(widget);
+    const check = setInterval(() => {
+      if (window.ElevenLabsConvai && window.ElevenLabsConvai.setFirstMessage) {
+        window.ElevenLabsConvai.setFirstMessage(FIRST_MESSAGE);
+        clearInterval(check);
+      }
+    }, 500);
+    setTimeout(() => clearInterval(check), 10000);
+  });
+</script>
 
 <section class="pillars-section">
   <div class="container">

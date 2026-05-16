@@ -31,6 +31,13 @@
     .pillar-desc{font-size:.9rem;color:var(--color-text-muted);margin:0;line-height:1.6}
     .pillar-badge{display:inline-block;font-size:.75rem;font-weight:700;background:rgba(14,165,233,.1);color:var(--color-blue);border:1px solid rgba(14,165,233,.2);border-radius:999px;padding:.2rem .7rem;margin-top:.75rem}
     .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+    .demo-section{padding:4rem 0}
+    .demo-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2.5rem;max-width:680px;margin:2rem auto 0;text-align:center}
+    .demo-label{display:inline-flex;align-items:center;gap:.5rem;background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.25);color:var(--color-blue);border-radius:999px;padding:.3rem .9rem;font-size:.8rem;font-weight:700;margin-bottom:1.25rem}
+    .demo-card h3{font-size:1.2rem;margin-bottom:.5rem;color:white}
+    .demo-card p{font-size:.9rem;color:var(--color-text-muted);max-width:480px;margin:0 auto 1.5rem}
+    #elevenlabs-widget{display:flex;justify-content:center}
+    .call-preview{background:rgba(0,0,0,.2);border-radius:var(--radius);padding:.85rem 1.1rem;font-size:.875rem;color:var(--color-text-muted);font-style:italic;border-left:3px solid var(--color-blue);text-align:left;margin-bottom:1.5rem}
     .price-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2rem;display:flex;flex-direction:column;position:relative}
     .price-card.featured{border-color:var(--color-blue);box-shadow:var(--shadow-glow-blue)}
     .featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--color-blue);color:#000;font-size:.75rem;font-weight:800;padding:.25rem 1rem;border-radius:999px;white-space:nowrap;font-family:var(--font-heading)}
@@ -97,6 +104,41 @@
     </div>
   </div>
 </section>
+
+<section class="demo-section">
+  <div class="container text-center">
+    <div class="section-tag">Live Demo</div>
+    <h2 class="section-title">Hear the AI dispatcher handle a burst pipe emergency.</h2>
+    <p style="color:var(--color-text-muted);max-width:520px;margin:0 auto">This is exactly what your customers hear when they call your number and you can't answer. Click the mic and try it yourself.</p>
+    <div class="demo-card">
+      <div class="demo-label">🎙 Try the live demo</div>
+      <div class="call-preview">"Hey, yeah — I found you guys on Google. I've got a burst pipe under my kitchen sink and water's going everywhere. Are you guys available to come out today?"</div>
+      <h3>Speak as the homeowner. Hear how your AI dispatcher responds.</h3>
+      <p>No call goes unanswered. Emergencies reach you instantly. Everything else books itself.</p>
+      <div id="elevenlabs-widget"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ElevenLabs Voice Demo Widget -->
+<script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+<script>
+  const AGENT_ID = "YOUR_AGENT_ID";
+  const FIRST_MESSAGE = "Hey, yeah — I found you guys on Google. I've got a burst pipe under my kitchen sink and water's going everywhere. Are you guys available to come out today?";
+  window.addEventListener('load', function() {
+    const widget = document.createElement('div');
+    widget.id = 'elevenlabs-convai';
+    widget.setAttribute('data-agent-id', AGENT_ID);
+    document.getElementById('elevenlabs-widget').appendChild(widget);
+    const check = setInterval(() => {
+      if (window.ElevenLabsConvai && window.ElevenLabsConvai.setFirstMessage) {
+        window.ElevenLabsConvai.setFirstMessage(FIRST_MESSAGE);
+        clearInterval(check);
+      }
+    }, 500);
+    setTimeout(() => clearInterval(check), 10000);
+  });
+</script>
 
 <section class="pricing-section" style="padding:5rem 0" id="pricing">
   <div class="container text-center">
