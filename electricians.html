@@ -65,6 +65,22 @@
     @media(max-width:768px){.pain-grid,.pillars-grid,.pricing-grid{grid-template-columns:1fr}}
     footer{border-top:1px solid var(--color-border);padding:3rem 0;margin-top:4rem;background:rgba(15,23,42,.5)}
     .footer-bottom{text-align:center;font-size:.8rem;color:var(--color-text-muted);margin-top:2rem;padding-top:1rem;border-top:1px solid var(--color-border)}
+  
+    /* Demo gate form */
+    .demo-gate{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.5rem}
+    .demo-gate h4{font-size:1rem;font-weight:700;color:white;margin-bottom:.35rem;font-family:var(--font-heading)}
+    .demo-gate p{font-size:.85rem;color:var(--color-text-muted);margin-bottom:1rem}
+    .gate-row{display:flex;gap:.6rem;max-width:440px;margin:0 auto}
+    .gate-name{width:130px;flex-shrink:0;padding:.7rem .9rem;background:rgba(0,0,0,.3);border:1px solid var(--color-border);border-radius:var(--radius);color:white;font-size:.875rem;font-family:var(--font-body)}
+    .gate-phone{flex:1;padding:.7rem .9rem;background:rgba(0,0,0,.3);border:1px solid var(--color-border);border-radius:var(--radius);color:white;font-size:.875rem;font-family:var(--font-body)}
+    .gate-name:focus,.gate-phone:focus{outline:none;border-color:#fbbf24}
+    .gate-name::placeholder,.gate-phone::placeholder{color:#3a4a5a}
+    .gate-submit{padding:.7rem 1.1rem;border:none;border-radius:var(--radius);font-weight:700;font-size:.875rem;cursor:pointer;background:#fbbf24;color:#000;white-space:nowrap;transition:var(--transition);flex-shrink:0}
+    .gate-submit:hover{opacity:.88}
+    .gate-note{font-size:.75rem;color:#3a4a5a;margin-top:.6rem;text-align:center}
+    .gate-success{font-size:.85rem;color:#4ade80;margin-top:.75rem;display:none;text-align:center}
+    .demo-widget-wrap{display:none!important;justify-content:center;align-items:center;min-height:80px;margin-bottom:1.75rem}
+    .demo-widget-wrap.unlocked{display:flex!important}
   </style>
 </head>
 <body>
@@ -140,7 +156,18 @@
           </div>
           <div class="demo-instruction">Listen to the call your AI just took.</div>
           <div class="demo-instruction-sub">Then watch what appears in your messages — automatically.</div>
-          <div class="demo-widget-wrap">
+          <div class="demo-gate" id="elec-gate">
+            <h4>Enter your number to receive the dispatch alert on your phone.</h4>
+            <p>We'll send you the real text your AI dispatcher would fire — so you feel exactly what your customers experience.</p>
+            <div class="gate-row">
+              <input class="gate-name" type="text" placeholder="First name" id="elec-name" maxlength="40">
+              <input class="gate-phone" type="tel" placeholder="Your mobile number" id="elec-phone" maxlength="20">
+              <button class="gate-submit" onclick="unlockDemo_elec()">Start demo →</button>
+            </div>
+            <div class="gate-note">We'll text you once. No spam. This is the same system your customers will use.</div>
+            <div class="gate-success" id="elec-success">✓ Sending now — check your phone in 30 seconds.</div>
+          </div>
+          <div class="demo-widget-wrap" id="elec-wrap">
             <elevenlabs-convai agent-id="agent_6601krryfm1cezmt13p825r97870" dynamic-variables='{"trade": "electrical", "services": "panel upgrades and replacements, circuit breaker repair, EV charger installation, outlet and switch repair, whole-home rewiring, safety inspections, permit work, generator hookup, outdoor and landscape lighting, and arc fault and GFCI protection", "emergency_triggers": "burning smell from any outlet switch or panel, sparking from any electrical component, breaker that trips immediately after being reset, warm or hot outlet or switch plate, flickering lights throughout the entire home, partial power loss with no obvious cause, any electrical issue in a home built before 1972", "safety_instruction": "Do not attempt to reset that breaker again. If the burning smell intensifies or you see any discoloration or smoke near outlets or the panel, turn off your main breaker immediately and call 911. Electrical fires can develop inside walls without visible flame.", "non_emergency": "EV charger installation quote, panel upgrade estimate, adding new outlets or circuits, outdoor lighting, safety inspection, generator transfer switch, ceiling fan installation, smart home wiring", "extra_intake": "The age of the home, whether the issue is ongoing or intermittent, and whether they have already attempted to reset the breaker and what happened", "tone": "Calm and authoritative. Electrical callers are often frightened about fire risk. Never minimize their concern. Acknowledge it directly, take control of the conversation with clear instructions, and commit firmly to a callback time.", "emergency_closing": "Do not reset that breaker. If you notice smoke or the smell gets stronger, evacuate and call 911 immediately - do not wait for the technician."}'></elevenlabs-convai>
           </div>
           <div class="sms-alert" id="elec-sms">
@@ -170,10 +197,66 @@
 </section>
 <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 <script>
-  setTimeout(function() {
-    var sms = document.getElementById('elec-sms');
-    if (sms) sms.classList.add('visible');
-  }, 8000);
+  // REPLACE THIS URL with your Zapier or Make webhook URL
+  var WEBHOOK_URL_ELEC = 'https://hooks.zapier.com/hooks/catch/YOUR_ZAPIER_HOOK_ID/';
+
+  function unlockDemo_elec() {
+    var name = document.getElementById('elec-name').value.trim();
+    var phone = document.getElementById('elec-phone').value.trim();
+
+    if (!name || !phone) {
+      document.getElementById('elec-phone').style.borderColor = '#f87171';
+      document.getElementById('elec-phone').placeholder = 'Required — enter your mobile number';
+      return;
+    }
+
+    // Show success state on gate
+    document.getElementById('elec-success').style.display = 'block';
+
+    // Unlock the widget
+    document.getElementById('elec-wrap').classList.add('unlocked');
+
+    // Scroll widget into view smoothly
+    setTimeout(function() {
+      document.getElementById('elec-wrap').scrollIntoView({behavior:'smooth', block:'center'});
+    }, 300);
+
+    // Fire webhook — sends real SMS + email to prospect
+    fetch(WEBHOOK_URL_ELEC, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: name,
+        phone: phone,
+        trade: 'Electrical',
+        trade_label: 'Electrical safety flag (breaker tripping, burning smell)',
+        source_page: window.location.href,
+        timestamp: new Date().toISOString(),
+        sms_message: 'Hey ' + name + ' — here is what just landed in your contractor pocket. Electrical safety flag (breaker tripping, burning smell). Customer expects callback within 30 min. This is a demo — but this is exactly what YOUR customers experience when they call and you cannot answer. Ken West, Rank & Ring (404) 555-0123',
+        email_subject: 'What your AI dispatcher just captured — Rank & Ring Demo',
+        email_body: 'Hi ' + name + ', You just experienced the Rank & Ring AI dispatcher demo. Here is what was captured: Trade: Electrical | Issue: Electrical safety flag (breaker tripping, burning smell) | Your number: ' + phone + '. This is exactly what lands in your contractors pocket after every call — name, number, address, issue, urgency. Ready to set this up for your business? Book a free 15-minute analysis at rankandring.io/book. — Ken West, Rank & Ring'
+      })
+    }).catch(function() {
+      // Silent fail — demo still works even if webhook fails
+      console.log('Webhook unavailable — demo continues');
+    });
+
+    // Show animated SMS card after 8 seconds
+    setTimeout(function() {
+      var sms = document.getElementById('elec-sms');
+      if (sms) sms.classList.add('visible');
+    }, 8000);
+  }
+
+  // Allow Enter key on phone field
+  document.addEventListener('DOMContentLoaded', function() {
+    var phoneInput = document.getElementById('elec-phone');
+    if (phoneInput) {
+      phoneInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') unlockDemo_elec();
+      });
+    }
+  });
 </script>
 
 <section style="padding:5rem 0" id="pricing">
