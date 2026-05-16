@@ -31,13 +31,23 @@
     .pillar-desc{font-size:.9rem;color:var(--color-text-muted);margin:0;line-height:1.6}
     .pillar-badge{display:inline-block;font-size:.75rem;font-weight:700;background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.2);border-radius:999px;padding:.2rem .7rem;margin-top:.75rem}
     .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
-    .demo-section{padding:4rem 0;background:linear-gradient(to bottom,transparent,rgba(15,23,42,.6),transparent)}
-    .demo-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2.5rem;max-width:680px;margin:2rem auto 0;text-align:center}
-    .demo-label{display:inline-flex;align-items:center;gap:.5rem;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);color:#fbbf24;border-radius:999px;padding:.3rem .9rem;font-size:.8rem;font-weight:700;margin-bottom:1.25rem}
-    .demo-card h3{font-size:1.2rem;margin-bottom:.5rem;color:white}
-    .demo-card p{font-size:.9rem;color:var(--color-text-muted);max-width:480px;margin:0 auto 1.5rem}
-    #elevenlabs-widget{display:flex;justify-content:center}
-    .call-preview{background:rgba(0,0,0,.2);border-radius:var(--radius);padding:.85rem 1.1rem;font-size:.875rem;color:var(--color-text-muted);font-style:italic;border-left:3px solid #fbbf24;text-align:left;margin-bottom:1.5rem}
+    .demo-section{padding:5rem 0;background:linear-gradient(135deg,rgba(251,191,36,.06),rgba(15,23,42,1),rgba(251,191,36,.04))}
+    .demo-phone{background:rgba(15,23,42,.9);border:1px solid rgba(251,191,36,.3);border-radius:var(--radius-lg);max-width:760px;margin:2.5rem auto 0;overflow:hidden;box-shadow:0 0 60px rgba(251,191,36,.1)}
+    .demo-phone-bar{background:rgba(251,191,36,.08);border-bottom:1px solid rgba(251,191,36,.2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+    .demo-calling{display:flex;align-items:center;gap:.6rem;font-size:.85rem;font-weight:700;color:#fbbf24}
+    .demo-calling-dot{width:8px;height:8px;border-radius:50%;background:#fbbf24;animation:pulse-dot 1.2s infinite}
+    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+    .demo-body{padding:2.5rem;text-align:center}
+    .demo-scenario{background:rgba(0,0,0,.3);border-left:3px solid #fbbf24;border-radius:0 var(--radius) var(--radius) 0;padding:1rem 1.25rem;text-align:left;margin-bottom:2rem;font-size:.95rem;color:var(--color-text-muted);line-height:1.6;font-style:italic}
+    .demo-scenario strong{color:white;font-style:normal}
+    .demo-body h3{font-size:1.3rem;color:white;margin-bottom:.5rem}
+    .demo-body p{font-size:.95rem;color:var(--color-text-muted);max-width:480px;margin:0 auto 1.75rem}
+    .demo-widget-wrap{display:flex;justify-content:center;align-items:center;min-height:80px}
+    .demo-result{display:flex;align-items:center;gap:.75rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:var(--radius);padding:1rem 1.25rem;margin-top:1.75rem;font-size:.875rem;color:#4ade80;text-align:left}
+    .demo-result-icon{font-size:1.25rem;flex-shrink:0}
+    .demo-steps{display:flex;justify-content:center;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
+    .demo-step{text-align:center;font-size:.8rem;color:var(--color-text-muted)}
+    .demo-step-num{width:28px;height:28px;border-radius:50%;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);color:#fbbf24;font-weight:800;font-family:var(--font-heading);display:flex;align-items:center;justify-content:center;margin:0 auto .5rem;font-size:.8rem}
     .price-card{background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2rem;display:flex;flex-direction:column;position:relative}
     .price-card.featured{border-color:#fbbf24;box-shadow:0 0 20px rgba(251,191,36,.2)}
     .featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#fbbf24;color:#000;font-size:.75rem;font-weight:800;padding:.25rem 1rem;border-radius:999px;white-space:nowrap;font-family:var(--font-heading)}
@@ -107,38 +117,41 @@
 
 <section class="demo-section">
   <div class="container text-center">
-    <div class="section-tag">Live Demo</div>
-    <h2 class="section-title">Hear the AI dispatcher handle a real electrical emergency.</h2>
-    <p style="color:var(--color-text-muted);max-width:520px;margin:0 auto">A tripping breaker at the wrong moment can cost you a $6,000 panel job. This is what answers when you can't. Try it yourself.</p>
-    <div class="demo-card">
-      <div class="demo-label">🎙 Try the live demo</div>
-      <div class="call-preview">"Hey, yeah — I found you guys on Google. My breaker keeps tripping every time I turn on my porch lights and I'm worried it's a fire hazard. Can you come take a look today?"</div>
-      <h3>Speak as the homeowner. Hear how your AI dispatcher responds.</h3>
-      <p>Safety emergencies get flagged immediately. Panel quotes and EV consults book to your calendar. Nothing drops.</p>
-      <div id="elevenlabs-widget"></div>
+    <div class="section-tag">Live AI Demo</div>
+    <h2 class="section-title" style="font-size:clamp(1.9rem,4vw,2.75rem)">Hear exactly what your customers hear<br>when you can't answer the phone.</h2>
+    <p style="color:var(--color-text-muted);max-width:560px;margin:0 auto;font-size:1.05rem">A tripping breaker at the wrong moment is a $6,000 panel job waiting to happen. Click the button and hear how your AI dispatcher handles it — and gets you the call back.</p>
+    <div class="demo-phone">
+      <div class="demo-phone-bar">
+        <div class="demo-calling">
+          <div class="demo-calling-dot"></div>
+          AI Dispatcher — Active 24/7
+        </div>
+        <div style="font-size:.8rem;color:var(--color-text-muted)">Rank & Ring · Electrical Demo</div>
+      </div>
+      <div class="demo-body">
+        <div class="demo-scenario">
+          <strong>The scenario:</strong> A homeowner's breaker keeps tripping when they turn on their porch lights. They're worried it's a fire hazard. They call your number at 7pm. You're with your family. This is what picks up.
+        </div>
+        <h3>Click the button. Start the call.</h3>
+        <p>Speak as the homeowner — or just listen. The AI assesses the safety risk, captures their information, and routes the call based on urgency.</p>
+        <div class="demo-widget-wrap">
+          <elevenlabs-convai agent-id="agent_6601krryfm1cezmt13p825r97870"></elevenlabs-convai>
+        </div>
+        <div class="demo-result">
+          <div class="demo-result-icon">📱</div>
+          <div>After this call: <strong>you receive a text</strong> — customer name, number, address, issue, and safety risk level. Potential hazards surface immediately. Panel quotes book to your calendar.</div>
+        </div>
+        <div class="demo-steps">
+          <div class="demo-step"><div class="demo-step-num">1</div>Customer calls your number</div>
+          <div class="demo-step"><div class="demo-step-num">2</div>AI answers in 1 ring</div>
+          <div class="demo-step"><div class="demo-step-num">3</div>Safety risk assessed</div>
+          <div class="demo-step"><div class="demo-step-num">4</div>You get a text. You call back.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- ElevenLabs Voice Demo Widget -->
 <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
-<script>
-  const AGENT_ID = "agent_6601krryfm1cezmt13p825r97870";
-  const FIRST_MESSAGE = "Hey, yeah — I found you guys on Google. My breaker keeps tripping every time I turn on my porch lights and I'm worried it's a fire hazard. Can you come take a look today?";
-  window.addEventListener('load', function() {
-    const widget = document.createElement('div');
-    widget.id = 'elevenlabs-convai';
-    widget.setAttribute('data-agent-id', AGENT_ID);
-    document.getElementById('elevenlabs-widget').appendChild(widget);
-    const check = setInterval(() => {
-      if (window.ElevenLabsConvai && window.ElevenLabsConvai.setFirstMessage) {
-        window.ElevenLabsConvai.setFirstMessage(FIRST_MESSAGE);
-        clearInterval(check);
-      }
-    }, 500);
-    setTimeout(() => clearInterval(check), 10000);
-  });
-</script>
 
 <section style="padding:5rem 0" id="pricing">
   <div class="container text-center">
